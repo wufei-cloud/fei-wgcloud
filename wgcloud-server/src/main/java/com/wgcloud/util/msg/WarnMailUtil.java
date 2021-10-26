@@ -10,6 +10,11 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.HtmlEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 
@@ -25,11 +30,10 @@ public class WarnMailUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(WarnMailUtil.class);
 
-    public static final String content_suffix = "<p><a target='_blank' href='http://www.wgstart.com'>WGCLOUD监控系统</a>敬上";
+//    public static final String content_suffix = "<p><a target='_blank' href='http://www.wgstart.com'>WGCLOUD监控系统</a>敬上";
 
     private static LogInfoService logInfoService = (LogInfoService) ApplicationContextHelper.getBean(LogInfoService.class);
     private static MailConfig mailConfig = (MailConfig) ApplicationContextHelper.getBean(MailConfig.class);
-
 
     /**
      * 判断系统内存使用率是否超过98%，超过则发送告警邮件
@@ -99,8 +103,8 @@ public class WarnMailUtil {
                 //记录发送信息
                 logInfoService.save(title, commContent, StaticKeys.LOG_ERROR);
             } catch (Exception e) {
-                logger.error("发送内存告警邮件失败：", e);
-                logInfoService.save("发送内存告警邮件错误", e.toString(), StaticKeys.LOG_ERROR);
+                logger.error("发送CPU告警邮件失败：", e);
+                logInfoService.save("发送CPU告警邮件错误", e.toString(), StaticKeys.LOG_ERROR);
             }
         }
 
@@ -273,7 +277,8 @@ public class WarnMailUtil {
             email.setFrom(StaticKeys.mailSet.getFromMailName(), "WGCLOUD监控系统");//发信者
             email.setSubject(mailTitle);//标题
             email.setCharset("UTF-8");//编码格式
-            email.setHtmlMsg(mailContent + content_suffix);//内容
+//            email.setHtmlMsg(mailContent + content_suffix);//内容
+            email.setHtmlMsg(mailContent);
             email.addTo(mails.split(";"));
             email.setSentDate(new Date());
             email.send();//发送

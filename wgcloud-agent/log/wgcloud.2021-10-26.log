@@ -1,0 +1,15 @@
+2021-10-26 15:46:18.890 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 10340 (/home/wufei/IdeaProjects/wgcloud/wgcloud-agent/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-agent)
+2021-10-26 15:46:18.894 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2021-10-26 15:46:19.013 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-26 15:46:19.023 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-26 15:46:19.973 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9998 (http)
+2021-10-26 15:46:19.990 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-10-26 15:46:19.991 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-10-26 15:46:19.997 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/lib]
+2021-10-26 15:46:20.058 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud-agent] - Initializing Spring embedded WebApplicationContext
+2021-10-26 15:46:20.058 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1033 ms
+2021-10-26 15:46:20.128 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-10-26 15:46:20.268 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-26 15:46:20.422 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2021-10-26 15:46:20.648 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9998 (http) with context path '/wgcloud-agent'
+2021-10-26 15:46:20.650 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 2.2 seconds (JVM running for 2.876)

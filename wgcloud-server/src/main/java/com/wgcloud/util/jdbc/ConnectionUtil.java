@@ -48,6 +48,9 @@ public class ConnectionUtil {
             driver = RDSConnection.driver_oracle;
             url = RDSConnection.url_oracle;
         }
+        /*
+        查询到正确数据库后，替换为用户输入的参数
+         */
         url = url.replace("{ip}", dbInfo.getIp()).replace("{port}", dbInfo.getPort()).replace("{dbname}", dbInfo.getDbName());
         try {
             //创建连接池

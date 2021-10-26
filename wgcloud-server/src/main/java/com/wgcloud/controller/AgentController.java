@@ -8,6 +8,7 @@ import com.wgcloud.entity.*;
 import com.wgcloud.service.LogInfoService;
 import com.wgcloud.service.SystemInfoService;
 import com.wgcloud.util.TokenUtils;
+import com.wgcloud.util.msg.WarnDingTalk;
 import com.wgcloud.util.msg.WarnMailUtil;
 import com.wgcloud.util.staticvar.BatchData;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -51,7 +53,7 @@ public class AgentController {
 
     @ResponseBody
     @RequestMapping("/minTask")
-    public JSONObject minTask(@RequestBody String paramBean) {
+    public JSONObject minTask(@RequestBody String paramBean)  {
         JSONObject agentJsonObject = (JSONObject) JSONUtil.parse(paramBean);
         JSONObject resultJson = new JSONObject();
         if (!tokenUtils.checkAgentToken(agentJsonObject)) {
@@ -81,7 +83,8 @@ public class AgentController {
                 BeanUtil.copyProperties(cpuState, bean);
                 BatchData.CPU_STATE_LIST.add(bean);
                 Runnable runnable = () -> {
-                    WarnMailUtil.sendCpuWarnInfo(bean);
+//                    WarnMailUtil.sendCpuWarnInfo(bean);
+                    WarnDingTalk.sendCpuWarnInfo(bean);
                 };
                 executor.execute(runnable);
 
@@ -91,7 +94,8 @@ public class AgentController {
                 BeanUtil.copyProperties(memState, bean);
                 BatchData.MEM_STATE_LIST.add(bean);
                 Runnable runnable = () -> {
-                    WarnMailUtil.sendWarnInfo(bean);
+//                    WarnMailUtil.sendWarnInfo(bean);
+                    WarnDingTalk.sendMemWarnInfo(bean);
                 };
                 executor.execute(runnable);
             }
