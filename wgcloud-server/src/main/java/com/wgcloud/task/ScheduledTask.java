@@ -10,6 +10,7 @@ import com.wgcloud.util.DateUtil;
 import com.wgcloud.util.RestUtil;
 import com.wgcloud.util.jdbc.ConnectionUtil;
 import com.wgcloud.util.jdbc.RDSConnection;
+import com.wgcloud.util.msg.WarnDingTalk;
 import com.wgcloud.util.msg.WarnMailUtil;
 import com.wgcloud.util.msg.WarnPools;
 import com.wgcloud.util.staticvar.BatchData;
@@ -135,13 +136,15 @@ public class ScheduledTask {
                         logInfoList.add(logInfo);
                         updateList.add(systemInfo);
                         Runnable runnable = () -> {
-                            WarnMailUtil.sendHostDown(systemInfo, true);
+//                            WarnMailUtil.sendHostDown(systemInfo, true);
+                            WarnDingTalk.sendHostDown(systemInfo,true);
                         };
                         executor.execute(runnable);
                     } else {
                         if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(systemInfo.getId()))) {
                             Runnable runnable = () -> {
-                                WarnMailUtil.sendHostDown(systemInfo, false);
+//                                WarnMailUtil.sendHostDown(systemInfo, false);
+                                WarnDingTalk.sendHostDown(systemInfo,false);
                             };
                             executor.execute(runnable);
                         }

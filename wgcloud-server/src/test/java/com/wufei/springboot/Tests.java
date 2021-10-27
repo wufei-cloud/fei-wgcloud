@@ -29,6 +29,22 @@ public class Tests {
 //
 //        JSONObject jsonObject = JSONObject.
 //        System.out.println(jsonObject.toString());
+        String tests = "{\n" +
+                "     \"msgtype\": \"markdown\",\n" +
+                "     \"markdown\": {\n" +
+                "         \"title\":\"杭州天气\",\n" +
+                "         \"text\": \"###杭州天气 @150XXXXXXXX \\n > <font face=\"逐浪新宋\">我是逐浪新宋</font> 9度，告警西北风1级，空气良89，相对温度73%\\n > ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\\n > ###### 10点20分发布 [天气](https://www.dingtalk.com) \\n\"\n" +
+                "     },\n" +
+                "      \"at\": {\n" +
+                "          \"atMobiles\": [\n" +
+                "              \"150XXXXXXXX\"\n" +
+                "          ],\n" +
+                "          \"atUserIds\": [\n" +
+                "              \"user123\"\n" +
+                "          ],\n" +
+                "          \"isAtAll\": false\n" +
+                "      }\n" +
+                " }";
 
 
         String url = "www.baidu.com";
@@ -37,8 +53,8 @@ public class Tests {
 //        String textmsg = "{ \"msgtype\": \"markdown\",\"markdown\": {\"title\":\"W1告警\",\"text\":\"告警测试,@15344062110\",\"at\":\"atMobiles\",\"atMobiles\":[\"15344062110\"],\"at\":\"atUserIds\",\"atUserIds\":[\"吴飞\"],\"at\":\"isAtAll\",\"isAtAll\":[\"false\"]}";
         String textmsg = "{ \"msgtype\": \"markdown\",\n" +
                 "     \"markdown\": {\n" +
-                "         \"title\":\"测试\",\n" +
-                "         \"text\": \"**测试告警**@15344062110\n,![](https://cdn.pixabay.com/photo/2021/01/29/14/58/lake-5961239_960_720.jpg)\n " +
+                "         \"title\":\"测试11\",\n" +
+                "         \"text\": \" **<font color=#FF0000 size=6>红色-加粗 </font>** \n xx告警@15344062110, \n![](https://cdn.pixabay.com/photo/2021/01/29/14/58/lake-5961239_960_720.jpg)\n " +
                 "                  [详情地址：] "+ url +"\" \n" +
                 "     },\n" +
                 "      \"at\": {\n" +
@@ -69,7 +85,19 @@ public class Tests {
 
     @Test
     public void showall(){
-//        DingTalkConfig dingTalkConfig = new DingTalkConfig();
-        System.out.println(dingTalk);
+//
+        boolean a = true;
+        if (a){
+            return;
+        }
+        System.out.println("111");
+
+
+
+
+
+
+
+
     }
 }
