@@ -55,12 +55,6 @@ base:
   #服务接口监控间隔，单位毫秒，默认10分钟
   heathTimes: 600000
 
-  #钉钉艾特列表
-  at:
-    atMobiles: 15344062110
-    atUserIds: 15344062110
-    isAtAll: false
-
 
 #告警配置
 mail:

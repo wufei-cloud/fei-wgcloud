@@ -1049,3 +1049,203 @@
 2021-10-27 19:34:43.543 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
 2021-10-27 19:34:43.562 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2021-10-27 19:34:43.588 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-10-27 20:00:00.888 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 15126 (/home/wufei/IdeaProjects/wgcloud/wgcloud-server/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-server)
+2021-10-27 20:00:00.891 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2021-10-27 20:00:00.986 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-27 20:00:00.986 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-27 20:00:02.741 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2021-10-27 20:00:02.758 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-10-27 20:00:02.758 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-10-27 20:00:02.763 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/wufei/Downloads/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2021-10-27 20:00:02.819 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring embedded WebApplicationContext
+2021-10-27 20:00:02.820 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1834 ms
+2021-10-27 20:00:03.698 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-10-27 20:00:03.874 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-27 20:00:03.995 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2021-10-27 20:00:04.116 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-10-27 20:00:04.180 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/wgcloud'
+2021-10-27 20:00:04.183 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 4.665 seconds (JVM running for 6.115)
+2021-10-27 20:00:24.163 [taskScheduler-6] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2021-10-27 20:00:24.163 [taskScheduler-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-10-27 20:00:24.395 [taskScheduler-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-10-27 20:00:34.152 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 20:00:34
+2021-10-27 20:00:34.153 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 20:00:34
+2021-10-27 20:01:00.121 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-27 20:01:00.121 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-10-27 20:01:00.133 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2021-10-27 20:01:34.145 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 20:01:34
+2021-10-27 20:01:34.147 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 20:01:34
+2021-10-27 20:01:34.153 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 20:01:34
+2021-10-27 20:02:34.147 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 20:02:34
+2021-10-27 20:02:34.457 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 20:02:34
+2021-10-27 20:03:32.989 [Thread-16] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-27 20:03:32.990 [Thread-16] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2021-10-27 20:03:32.996 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-10-27 20:03:33.025 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-10-27 22:28:04.859 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 3036 (/home/wufei/IdeaProjects/wgcloud/wgcloud-server/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-server)
+2021-10-27 22:28:04.867 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2021-10-27 22:28:05.069 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-27 22:28:05.071 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-27 22:28:07.193 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2021-10-27 22:28:07.242 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-10-27 22:28:07.243 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-10-27 22:28:07.258 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/wufei/Downloads/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2021-10-27 22:28:07.441 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring embedded WebApplicationContext
+2021-10-27 22:28:07.441 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2345 ms
+2021-10-27 22:28:08.926 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-10-27 22:28:09.081 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-27 22:28:09.295 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2021-10-27 22:28:09.665 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-10-27 22:28:09.742 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/wgcloud'
+2021-10-27 22:28:09.746 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 6.742 seconds (JVM running for 8.905)
+2021-10-27 22:28:29.757 [taskScheduler-2] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2021-10-27 22:28:29.759 [taskScheduler-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-10-27 22:28:30.273 [taskScheduler-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-10-27 22:28:39.703 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:28:39
+2021-10-27 22:28:39.704 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:28:39
+2021-10-27 22:29:39.699 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 22:29:39
+2021-10-27 22:29:39.702 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:29:39
+2021-10-27 22:29:39.707 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:29:39
+2021-10-27 22:30:39.702 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:30:39
+2021-10-27 22:30:39.704 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:30:39
+2021-10-27 22:31:39.701 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:31:39
+2021-10-27 22:31:39.702 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:31:39
+2021-10-27 22:32:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:32:39
+2021-10-27 22:32:39.702 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:32:39
+2021-10-27 22:33:39.701 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:33:39
+2021-10-27 22:33:39.702 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:33:39
+2021-10-27 22:34:39.701 [taskScheduler-10] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:34:39
+2021-10-27 22:34:39.701 [taskScheduler-10] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:34:39
+2021-10-27 22:35:08.824 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-27 22:35:08.824 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-10-27 22:35:08.835 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2021-10-27 22:35:39.701 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:35:39
+2021-10-27 22:35:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:35:39
+2021-10-27 22:36:39.701 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:36:39
+2021-10-27 22:37:38.381 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:37:38
+2021-10-27 22:37:39.701 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:37:39
+2021-10-27 22:37:41.146 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:37:41
+2021-10-27 22:38:39.702 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:38:39
+2021-10-27 22:38:39.702 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:38:39
+2021-10-27 22:39:39.698 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 22:39:39
+2021-10-27 22:39:39.701 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:39:39
+2021-10-27 22:39:52.000 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:39:52
+2021-10-27 22:40:39.702 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:40:39
+2021-10-27 22:40:39.702 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:40:39
+2021-10-27 22:41:39.703 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:41:39
+2021-10-27 22:41:39.704 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:41:39
+2021-10-27 22:42:39.701 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:42:39
+2021-10-27 22:42:39.702 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:42:39
+2021-10-27 22:43:39.702 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:43:39
+2021-10-27 22:43:39.702 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:43:39
+2021-10-27 22:44:39.702 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:44:39
+2021-10-27 22:44:39.702 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:44:39
+2021-10-27 22:45:39.702 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:45:39
+2021-10-27 22:45:39.702 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:45:39
+2021-10-27 22:46:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:46:39
+2021-10-27 22:46:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:46:39
+2021-10-27 22:47:39.702 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:47:39
+2021-10-27 22:47:39.702 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:47:39
+2021-10-27 22:48:39.702 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:48:39
+2021-10-27 22:48:39.702 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:48:39
+2021-10-27 22:49:39.698 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 22:49:39
+2021-10-27 22:49:39.702 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:49:39
+2021-10-27 22:49:39.702 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:49:39
+2021-10-27 22:50:39.702 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:50:39
+2021-10-27 22:50:39.702 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:50:39
+2021-10-27 22:51:39.701 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:51:39
+2021-10-27 22:51:39.701 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:51:39
+2021-10-27 22:52:39.702 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:52:39
+2021-10-27 22:52:39.703 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:52:39
+2021-10-27 22:53:39.702 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:53:39
+2021-10-27 22:53:39.702 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:53:39
+2021-10-27 22:54:39.701 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:54:39
+2021-10-27 22:54:39.701 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:54:39
+2021-10-27 22:55:39.702 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:55:39
+2021-10-27 22:55:39.702 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:55:39
+2021-10-27 22:56:39.701 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:56:39
+2021-10-27 22:56:39.701 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:56:39
+2021-10-27 22:57:39.701 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:57:39
+2021-10-27 22:57:39.702 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:57:39
+2021-10-27 22:58:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:58:39
+2021-10-27 22:58:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:58:39
+2021-10-27 22:59:39.698 [taskScheduler-28] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 22:59:39
+2021-10-27 22:59:39.701 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 22:59:39
+2021-10-27 22:59:39.701 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 22:59:39
+2021-10-27 23:00:39.701 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:00:39
+2021-10-27 23:00:39.702 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:00:39
+2021-10-27 23:01:39.702 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:01:39
+2021-10-27 23:01:39.702 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:01:39
+2021-10-27 23:02:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:02:39
+2021-10-27 23:02:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:02:39
+2021-10-27 23:03:39.702 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:03:39
+2021-10-27 23:03:39.702 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:03:39
+2021-10-27 23:04:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:04:39
+2021-10-27 23:04:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:04:39
+2021-10-27 23:05:39.701 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:05:39
+2021-10-27 23:05:39.701 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:05:39
+2021-10-27 23:06:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:06:39
+2021-10-27 23:06:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:06:39
+2021-10-27 23:07:39.701 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:07:39
+2021-10-27 23:07:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:07:39
+2021-10-27 23:08:39.702 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:08:39
+2021-10-27 23:08:40.381 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:08:40
+2021-10-27 23:09:39.698 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 23:09:39
+2021-10-27 23:09:39.702 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:09:39
+2021-10-27 23:09:40.894 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:09:40
+2021-10-27 23:10:39.701 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:10:39
+2021-10-27 23:10:39.702 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:10:39
+2021-10-27 23:11:39.702 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:11:39
+2021-10-27 23:11:40.992 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:11:40
+2021-10-27 23:12:39.702 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:12:39
+2021-10-27 23:12:40.439 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:12:40
+2021-10-27 23:13:39.704 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:13:39
+2021-10-27 23:13:39.705 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:13:39
+2021-10-27 23:14:39.702 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:14:39
+2021-10-27 23:14:41.044 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:14:41
+2021-10-27 23:15:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:15:39
+2021-10-27 23:15:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:15:39
+2021-10-27 23:16:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:16:39
+2021-10-27 23:16:39.702 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:16:39
+2021-10-27 23:17:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:17:39
+2021-10-27 23:17:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:17:39
+2021-10-27 23:18:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:18:39
+2021-10-27 23:18:39.701 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:18:39
+2021-10-27 23:19:39.698 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 23:19:39
+2021-10-27 23:19:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:19:39
+2021-10-27 23:19:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:19:39
+2021-10-27 23:20:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:20:39
+2021-10-27 23:20:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:20:39
+2021-10-27 23:21:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:21:39
+2021-10-27 23:21:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:21:39
+2021-10-27 23:22:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:22:39
+2021-10-27 23:22:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:22:39
+2021-10-27 23:23:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:23:39
+2021-10-27 23:23:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:23:39
+2021-10-27 23:24:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:24:39
+2021-10-27 23:24:39.702 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:24:39
+2021-10-27 23:25:39.701 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:25:39
+2021-10-27 23:25:40.595 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:25:40
+2021-10-27 23:26:39.702 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:26:39
+2021-10-27 23:26:41.185 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:26:41
+2021-10-27 23:27:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:27:39
+2021-10-27 23:27:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:27:39
+2021-10-27 23:28:39.701 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:28:39
+2021-10-27 23:28:40.325 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:28:40
+2021-10-27 23:29:39.701 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2021-10-27 23:29:39
+2021-10-27 23:29:39.704 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:29:39
+2021-10-27 23:29:40.425 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:29:40
+2021-10-27 23:30:39.701 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:30:39
+2021-10-27 23:30:39.701 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:30:39
+2021-10-27 23:31:39.701 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:31:39
+2021-10-27 23:31:40.715 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:31:40
+2021-10-27 23:32:39.702 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:32:39
+2021-10-27 23:32:40.671 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:32:40
+2021-10-27 23:33:39.702 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:33:39
+2021-10-27 23:33:39.702 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:33:39
+2021-10-27 23:34:39.702 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2021-10-27 23:34:39
+2021-10-27 23:34:39.702 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2021-10-27 23:34:39
+2021-10-27 23:34:52.351 [Thread-19] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-27 23:34:52.353 [Thread-19] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2021-10-27 23:34:52.363 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-10-27 23:34:52.369 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
