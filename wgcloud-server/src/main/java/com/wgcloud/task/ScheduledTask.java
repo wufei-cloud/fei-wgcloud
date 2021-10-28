@@ -183,13 +183,15 @@ public class ScheduledTask {
                         logInfoList.add(logInfo);
                         updateList.add(appInfo);
                         Runnable runnable = () -> {
-                            WarnMailUtil.sendAppDown(appInfo, true);
+//                            WarnMailUtil.sendAppDown(appInfo, true);
+                            WarnDingTalk.sendAppDown(appInfo,true);
                         };
                         executor.execute(runnable);
                     } else {
                         if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(appInfo.getId()))) {
                             Runnable runnable = () -> {
-                                WarnMailUtil.sendAppDown(appInfo, false);
+//                                WarnMailUtil.sendAppDown(appInfo, false);
+                                WarnDingTalk.sendAppDown(appInfo,true);
                             };
                             executor.execute(runnable);
                         }

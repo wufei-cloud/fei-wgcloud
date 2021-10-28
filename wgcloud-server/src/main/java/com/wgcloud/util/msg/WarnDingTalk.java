@@ -2,10 +2,7 @@ package com.wgcloud.util.msg;
 
 import com.wgcloud.common.ApplicationContextHelper;
 import com.wgcloud.config.DingTalk;
-import com.wgcloud.entity.AppInfo;
-import com.wgcloud.entity.CpuState;
-import com.wgcloud.entity.MemState;
-import com.wgcloud.entity.SystemInfo;
+import com.wgcloud.entity.*;
 import com.wgcloud.service.LogInfoService;
 import com.wgcloud.util.RestUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
@@ -34,6 +31,11 @@ public class WarnDingTalk {
 //    保存log
     private static LogInfoService logInfoService = (LogInfoService) ApplicationContextHelper.getBean(LogInfoService.class);
 
+    /**
+     *  监控CPU 大于 90 Q1   大于 70 Q2
+     * @param cpuState
+     * @return
+     */
     public static boolean sendCpuWarnInfo(CpuState cpuState) {
         if (cpuState.getSys() != null && cpuState.getSys() >= 70) {
             if (cpuState.getSys() >= 90){
@@ -61,6 +63,11 @@ public class WarnDingTalk {
         return false;
     }
 
+    /**
+     * 监控内存 大于 90 Q1   大于 70 Q2
+     * @param memState
+     * @return
+     */
     public static boolean sendMemWarnInfo(MemState memState){
         if (memState.getUsePer() != null && memState.getUsePer() >= 70){
             if (memState.getUsePer() >= 90){
@@ -90,6 +97,12 @@ public class WarnDingTalk {
 
     }
 
+    /**
+     * 主机下线检测
+     * @param systemInfo
+     * @param isDown
+     * @return
+     */
     public static boolean sendHostDown(SystemInfo systemInfo,boolean isDown){
         String key = systemInfo.getId();
         if (isDown){
@@ -124,6 +137,45 @@ public class WarnDingTalk {
         return false;
     }
 
+    /**
+     * 进程下线检测
+     * @param appInfo
+     * @param isDown
+     * @return
+     */
+    public static boolean sendAppDown(AppInfo appInfo, boolean isDown) {
+        String key = appInfo.getId();
+        if (isDown) {
+            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
+                return false;
+            }
+            try {
+                String title = ("进程下线告警 "+appInfo.getHostname());
+                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** @15344062110 \n\n 进程超过十分钟未上报数据，可能已经下线 " +appInfo.getHostname()  + "\n\n "
+                        + appInfo.getAppName() + "。 \n\n 如果不在监控该进程，请从进程列表移除同时不在接收该进程告警");
+                sendDing(title,text);
+                WarnPools.MEM_WARN_MAP.put(key,"1");
+                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("发送进程下线告警邮件失败：", e);
+                logInfoService.save("发送进程下线告警错误", e.toString(), StaticKeys.LOG_ERROR);
+            }
+        } else {
+            WarnPools.MEM_WARN_MAP.remove(key);
+            try {
+                String title = ("进程上线告警恢复 "+appInfo.getHostname());
+                String text = ("进程告警恢复" +appInfo.getHostname()  + "\n\n "
+                        + appInfo.getAppName() + "。");
+                sendDing(title,text);
+                WarnPools.MEM_WARN_MAP.put(key,"1");
+                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("发送进程恢复上线通知邮件失败：", e);
+                logInfoService.save("发送进程恢复上线通知错误", e.toString(), StaticKeys.LOG_ERROR);
+            }
+        }
+        return false;
+    }
 
     public static String sendDing(String title, String text) {
 
