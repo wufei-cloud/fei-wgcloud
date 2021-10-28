@@ -1,0 +1,19 @@
+2021-10-28 10:19:01.371 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 3086 (/home/wufei/IdeaProjects/wgcloud/wgcloud-server/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-server)
+2021-10-28 10:19:01.374 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2021-10-28 10:19:01.545 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-28 10:19:01.546 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-28 10:19:04.226 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2021-10-28 10:19:04.248 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-10-28 10:19:04.248 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-10-28 10:19:04.256 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/wufei/Downloads/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2021-10-28 10:19:04.324 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring embedded WebApplicationContext
+2021-10-28 10:19:04.325 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2779 ms
+2021-10-28 10:19:05.413 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-10-28 10:19:05.766 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-28 10:19:06.070 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2021-10-28 10:19:06.224 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-10-28 10:19:06.320 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/wgcloud'
+2021-10-28 10:19:06.326 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 5.887 seconds (JVM running for 6.55)
+2021-10-28 10:19:26.305 [taskScheduler-2] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2021-10-28 10:19:26.306 [taskScheduler-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-10-28 10:19:26.559 [taskScheduler-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

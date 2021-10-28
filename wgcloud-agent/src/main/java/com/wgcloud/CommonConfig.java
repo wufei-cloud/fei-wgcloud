@@ -1,5 +1,6 @@
 package com.wgcloud;
 
+import com.wgcloud.entity.GetHostAddress;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,7 @@ public class CommonConfig {
 
     private String serverUrl = "";
 
-    private String bindIp = "";
+    private String bindIp = GetHostAddress.hostAddress();
 
     private String wgToken = "";
 

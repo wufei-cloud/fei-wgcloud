@@ -32,7 +32,9 @@ public class RestUtil {
         }
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+//        对于主要浏览器设置字符集，目前Chrome已经默认支持，所以可以忽略设置
         headers.add("Accept", MediaType.APPLICATION_JSON_UTF8.toString());
+//        将给定名称添加到标头
         HttpEntity<String> httpEntity = new HttpEntity<>(JSONUtil.parse(jsonObject).toString(), headers);
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, httpEntity, String.class);
         return responseEntity.getBody();
