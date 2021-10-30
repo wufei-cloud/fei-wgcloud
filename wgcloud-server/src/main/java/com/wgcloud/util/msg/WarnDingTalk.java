@@ -177,6 +177,45 @@ public class WarnDingTalk {
         return false;
     }
 
+    public static boolean sendHeathInfo(HeathMonitor heathMonitor, boolean isDown) {
+        String key = heathMonitor.getId();
+        if (isDown) {
+            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
+                return false;
+            }
+            try {
+                String title = "服务接口检测告警：" + heathMonitor.getAppName();
+                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n @15344062110 服务接口：" + heathMonitor.getHeathUrl() + "\n\n 响应状态码为" + heathMonitor.getHeathStatus() + "  可能存在异常，请查看";
+               //发送钉钉告警
+                sendDing(title,text);
+                //标记已发送过告警信息
+                WarnPools.MEM_WARN_MAP.put(key, "1");
+                //记录发送信息
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("发送服务健康检测告警信息失败：", e);
+                logInfoService.save("发送服务健康检测告警信息错误", e.toString(), StaticKeys.LOG_ERROR);
+            }
+        } else {
+            WarnPools.MEM_WARN_MAP.remove(key);
+            try {
+                String title = "服务接口恢复正常通知：" + heathMonitor.getAppName();
+                String text = "服务接口恢复正常通知：" + heathMonitor.getHeathUrl() + "，响应状态码为" + heathMonitor.getHeathStatus() + "";
+               //发送钉钉信息
+                sendDing(title,text);
+                //记录发送信息
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("发送服务接口恢复正常通知信息失败：", e);
+                logInfoService.save("发送服务接口恢复正常通知信息错误", e.toString(), StaticKeys.LOG_ERROR);
+            }
+        }
+        return false;
+    }
+
+    /*
+    发送钉钉消息
+     */
     public static String sendDing(String title, String text) {
 
 //        消息模板

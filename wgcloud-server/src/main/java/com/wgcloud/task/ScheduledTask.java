@@ -242,13 +242,15 @@ public class ScheduledTask {
                         logInfo.setState(StaticKeys.LOG_ERROR);
                         logInfoList.add(logInfo);
                         Runnable runnable = () -> {
-                            WarnMailUtil.sendHeathInfo(h, true);
+//                            WarnMailUtil.sendHeathInfo(h, true);
+                            WarnDingTalk.sendHeathInfo(h,true);
                         };
                         executor.execute(runnable);
                     } else {
                         if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(h.getId()))) {
                             Runnable runnable = () -> {
-                                WarnMailUtil.sendHeathInfo(h, false);
+//                                WarnMailUtil.sendHeathInfo(h, false);
+                                WarnDingTalk.sendHeathInfo(h,true);
                             };
                             executor.execute(runnable);
                         }
