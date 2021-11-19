@@ -16,6 +16,7 @@ spring:
     url: jdbc:mysql://123.57.158.15:3306/wgcloud?characterEncoding=utf-8&characterSetResults=utf8&autoReconnect=true&useSSL=true&allowMultiQueries=true
     username: wgcloud
     password: D+E+tu3L9IjFxHbahW8W2tLo
+    type: com.alibaba.druid.pool.DruidDataSource
     # hikari连接池的参数 相关设置
     hikari:
       # 生效超时
