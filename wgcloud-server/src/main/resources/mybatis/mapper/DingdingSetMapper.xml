@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wgcloud.mapper.DingSetMapper">
+    <resultMap id="resultMap" type="com.wgcloud.entity.DingSet">
+        <id column="ID" property="id" jdbcType="CHAR"/>
+        <result column="FROM_DING_API" property="fromDingName" jdbcType="CHAR"/>
+        <result column="TO_PHONE" property="toPhone" jdbcType="CHAR"/>
+        <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="dingTables">
+        ID
+        ,FROM_DING_API,TO_PHONE,CREATE_TIME
+    </sql>
+
+    <delete id="deleteById" parameterType="java.lang.String">
+        DELETE FROM
+        DING_SET
+        WHERE ID IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <insert id="save" parameterType="com.wgcloud.entity.DingSet">
+        INSERT INFO DING_SET
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+           <if test="id != null" >ID,</if>
+           <if test="fromDingName != null">FROM_DING_API,</if>
+           <if test="toPhone != null">TO_PHONE,</if>
+           <if test="createTime != null">CREATE_TIME</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="fromDingName != null">#{fromDingName},</if>
+            <if test="toPhone != null">#{toPhone},</if>
+            <if test="createTime != null">#{createTime}</if>
+        </trim>
+
+    </insert>
+
+    <update id="updateById" parameterType="com.wgcloud.entity.DingSet">
+        UPDATE MAIL_SET
+        <set>
+            <if test="fromDingName != null">
+                FROM_DING_API = #{fromDingName},
+            </if>
+
+            <if test="toPhone != null">
+            TO_PHONE= #{toPhone},
+            </if>
+        </set>
+        WHERE ID = #{id}
+    </update>
+
+
+    <select id="selectAllByParms" parameterType="map" resultMap="resultMap">
+        SELECT
+        <include refid="dingTables"/>
+        FROM DING_SET t
+        ORDER BY CREATE_TIME DESC
+    </select>
+
+
+</mapper>

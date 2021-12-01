@@ -33,6 +33,7 @@ public class MailSetService {
     }
 
 
+
     public int deleteById(String[] id) throws Exception {
         return mailSetMapper.deleteById(id);
     }

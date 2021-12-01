@@ -1,6 +1,7 @@
 package com.wgcloud.util.staticvar;
 
 
+import com.wgcloud.entity.DingSet;
 import com.wgcloud.entity.MailSet;
 
 /**
@@ -51,5 +52,8 @@ public class StaticKeys {
     public static String DOWN_STATE = "2";
 
     public static MailSet mailSet = null;
+
+    //钉钉告警
+    public static DingSet dingSet = null;
 
 }

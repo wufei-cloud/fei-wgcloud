@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="http://www.wgstart.com"  target="_blank" class="brand-link">
-        <img th:src="@{'/static/logincss/logo.png'}"  class="brand-image img-circle elevation-3"
+    <a href="http://www.wgstart.com" target="_blank" class="brand-link">
+        <img th:src="@{'/static/logincss/logo.png'}" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light">WGCLOUD</span>
     </a>
@@ -32,59 +32,59 @@
                 </th:block>
                 <th:block th:unless="${#strings.startsWith(session.menuActive,'1')}">
                     <li class="nav-item has-treeview">
-                        <a  href="javascript:void(0);" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                 </th:block>
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            仪表盘
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <th:block th:if="${session.menuActive eq '11'}">
-                                <a th:href="@{'/dash/main'}" class="nav-link active">
-                            </th:block>
-                            <th:block th:unless="${session.menuActive eq '11'}">
-                                <a th:href="@{'/dash/main'}" class="nav-link">
-                            </th:block>
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>监控概要</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <th:block th:if="${session.menuActive eq '12'}">
-                                <a th:href="@{'/dash/systemInfoList'}" class="nav-link active">
-                            </th:block>
-                            <th:block th:unless="${session.menuActive eq '12'}">
-                                <a th:href="@{'/dash/systemInfoList'}" class="nav-link">
-                            </th:block>
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>主机管理</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <th:block th:if="${session.menuActive eq '13'}">
-                                <a th:href="@{'/appInfo/list'}" class="nav-link active">
-                            </th:block>
-                            <th:block th:unless="${session.menuActive eq '13'}">
-                                <a th:href="@{'/appInfo/list'}" class="nav-link">
-                            </th:block>
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>进程管理</p>
-                            </a>
-                        </li>
-                    </ul>
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    仪表盘
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <th:block th:if="${session.menuActive eq '11'}">
+                            <a th:href="@{'/dash/main'}" class="nav-link active">
+                        </th:block>
+                        <th:block th:unless="${session.menuActive eq '11'}">
+                            <a th:href="@{'/dash/main'}" class="nav-link">
+                        </th:block>
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>监控概要</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <th:block th:if="${session.menuActive eq '12'}">
+                            <a th:href="@{'/dash/systemInfoList'}" class="nav-link active">
+                        </th:block>
+                        <th:block th:unless="${session.menuActive eq '12'}">
+                            <a th:href="@{'/dash/systemInfoList'}" class="nav-link">
+                        </th:block>
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>主机管理</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <th:block th:if="${session.menuActive eq '13'}">
+                            <a th:href="@{'/appInfo/list'}" class="nav-link active">
+                        </th:block>
+                        <th:block th:unless="${session.menuActive eq '13'}">
+                            <a th:href="@{'/appInfo/list'}" class="nav-link">
+                        </th:block>
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>进程管理</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
 
 
                 <th:block th:if="${#strings.startsWith(session.menuActive,'4')}">
                     <li class="nav-item has-treeview menu-open">
-                        <a  href="javascript:void(0);" class="nav-link active">
+                        <a href="javascript:void(0);" class="nav-link active">
                 </th:block>
                 <th:block th:unless="${#strings.startsWith(session.menuActive,'4')}">
                     <li class="nav-item has-treeview">
-                        <a  href="javascript:void(0);" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                 </th:block>
                 <i class="nav-icon fas fa-table"></i>
                 <p>
@@ -121,11 +121,11 @@
 
                 <th:block th:if="${#strings.startsWith(session.menuActive,'5')}">
                     <li class="nav-item has-treeview menu-open">
-                        <a  href="javascript:void(0);" class="nav-link active">
+                        <a href="javascript:void(0);" class="nav-link active">
                 </th:block>
                 <th:block th:unless="${#strings.startsWith(session.menuActive,'5')}">
                     <li class="nav-item has-treeview">
-                        <a  href="javascript:void(0);" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                 </th:block>
                 <i class="nav-icon fas fa-tree"></i>
                 <p>
@@ -151,11 +151,11 @@
 
                 <th:block th:if="${#strings.startsWith(session.menuActive,'2')}">
                     <li class="nav-item has-treeview menu-open">
-                        <a  href="javascript:void(0);" class="nav-link active">
+                        <a href="javascript:void(0);" class="nav-link active">
                 </th:block>
                 <th:block th:unless="${#strings.startsWith(session.menuActive,'2')}">
                     <li class="nav-item has-treeview">
-                        <a  href="javascript:void(0);" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                 </th:block>
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
@@ -180,14 +180,13 @@
                 </li>
 
 
-
                 <th:block th:if="${#strings.startsWith(session.menuActive,'3')}">
                     <li class="nav-item has-treeview menu-open">
-                        <a  href="javascript:void(0);" class="nav-link active">
+                        <a href="javascript:void(0);" class="nav-link active">
                 </th:block>
                 <th:block th:unless="${#strings.startsWith(session.menuActive,'3')}">
                     <li class="nav-item has-treeview">
-                        <a  href="javascript:void(0);" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                 </th:block>
                 <i class="nav-icon far fa-envelope"></i>
                 <p>
@@ -202,6 +201,37 @@
                         </th:block>
                         <th:block th:unless="${session.menuActive eq '31'}">
                             <a th:href="@{'/mailset/list'}" class="nav-link">
+                        </th:block>
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>设置</p>
+                        </a>
+                    </li>
+
+                </ul>
+                </li>
+
+
+                <th:block th:if="${#strings.startsWith(session.menuActive,'8')}">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="javascript:void(0);" class="nav-link active">
+                </th:block>
+                <th:block th:unless="${#strings.startsWith(session.menuActive,'8')}">
+                    <li class="nav-item has-treeview">
+                        <a href="javascript:void(0);" class="nav-link">
+                </th:block>
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                    钉钉告警
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <th:block th:if="${session.menuActive eq '33'}">
+                            <a th:href="@{'/dingset/list'}" class="nav-link active">
+                        </th:block>
+                        <th:block th:unless="${session.menuActive eq '33'}">
+                            <a th:href="@{'/dingset/list'}" class="nav-link">
                         </th:block>
                         <i class="far fa-circle nav-icon"></i>
                         <p>设置</p>
