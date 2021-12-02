@@ -13,23 +13,25 @@ import java.util.Map;
 @Service
 public class DingSetServer {
 
-    public void save(DingSet DingSet) throws Exception{
-        DingSet.setId(UUIDUtil.getUUID());
-        DingSet.setCreateTime(DateUtil.getNowTime());
-        DingSet.setFromDingName(DingSet.getFromDingName().trim());
-        DingSet.setToPhone(DingSet.getToPhone().trim());
-        dingSetMapper.save(DingSet);
+    public void save(DingSet dingSet) throws Exception {
+        dingSet.setId(UUIDUtil.getUUID());
+        dingSet.setCreateTime(DateUtil.getNowTime());
+        dingSet.setFromDingName(dingSet.getFromDingName().trim());
+        dingSet.setToPhone(dingSet.getToPhone().trim());
+        dingSetMapper.save(dingSet);
     }
-    public List<DingSet> selectAllByParms(Map<String, Object> params) throws Exception{
+
+    public List<DingSet> selectAllByParms(Map<String, Object> params) throws Exception {
         return dingSetMapper.selectAllByParms(params);
     }
 
 
-    public int deleteById(String[] id) throws Exception{
+    public int deleteById(String[] id) throws Exception {
         return dingSetMapper.deleteById(id);
     }
 
-    public int updateById(DingSet DingSet) throws Exception{
+    public int updateById(DingSet DingSet) throws Exception {
+        System.out.print("开始执行更新语句");
         return dingSetMapper.updateById(DingSet);
     }
 

@@ -25,7 +25,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/dingset")
 public class DingSetController {
-//    log
+    //    log
     private static final Logger logger = LoggerFactory.getLogger(DingSetController.class);
 
     @Resource
@@ -34,22 +34,21 @@ public class DingSetController {
     private LogInfoService logInfoService;
 
 
-
     @RequestMapping("/list")
-    public String DingSetList(DingSet Dingset, Model model, HttpServletRequest request){
-        Map<String,Object> params = new HashMap<>();
-        try{
+    public String DingSetList(DingSet Dingset, Model model, HttpServletRequest request) {
+        Map<String, Object> params = new HashMap<>();
+        try {
             List<DingSet> list = dingSetServer.selectAllByParms(params);
-            if (list.size() > 0){
-                model.addAttribute("dingSet",list.get(0));
+            if (list.size() > 0) {
+                model.addAttribute("dingSet", list.get(0));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         String msg = request.getParameter("msg");
-        if (!StringUtils.isEmpty(msg)){
-            if (msg.equals("save")){
-                model.addAttribute("msg","保存成功");
+        if (!StringUtils.isEmpty(msg)) {
+            if (msg.equals("save")) {
+                model.addAttribute("msg", "保存成功");
             }
 
         }
@@ -63,17 +62,17 @@ public class DingSetController {
      */
 
     @RequestMapping("save")
-    public String saveDingSet(DingSet dingSet,Model model,HttpServletRequest request){
-        try{
-            if (StringUtils.isEmpty(dingSet.getId())){
+    public String saveDingSet(DingSet dingSet, Model model, HttpServletRequest request) {
+        try {
+            if (StringUtils.isEmpty(dingSet.getId())) {
                 dingSetServer.save(dingSet);
-            }else {
+            } else {
                 dingSetServer.updateById(dingSet);
             }
             StaticKeys.dingSet = dingSet;
-        }catch (Exception e){
-           logger.error("保存钉钉设置信息错误：",e);
-           logInfoService.save("钉钉告警信息设置失败",e.toString(),StaticKeys.LOG_ERROR);
+        } catch (Exception e) {
+            logger.error("保存钉钉设置信息错误：", e);
+            logInfoService.save("钉钉告警信息设置失败", e.toString(), StaticKeys.LOG_ERROR);
         }
 
         return "redirect:/dingset/list?msg=save";

@@ -3,12 +3,7 @@ package com.wgcloud.entity;
 import java.util.Date;
 
 /**
- * @version v2.3
- * @ClassName:DiskIoState.java
- * @author: http://www.wgstart.com
- * @date: 2019年11月16日
- * @Description: 查看磁盘IO使用情况
- * @Copyright: 2017-2021 wgcloud. All rights reserved.
+ * @date: 2021.12.2
  */
 public class DingSet extends BaseEntity {
 
@@ -21,7 +16,6 @@ public class DingSet extends BaseEntity {
      * 发送邮箱的帐号
      */
     private String fromDingName;
-
 
 
     /**

@@ -45,7 +45,7 @@
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form role="form" id="form1" method="post" th:action="@{'/dingset/save'}">
-                               <!--  <input type="hidden" name="id" th:value="${dingSet.id}"/> -->
+                               <input type="hidden" name="id" th:value="${dingSet.id}"/>
                                 <div class="card-body">
                                     <!--<div class="form-group">
                                         <label for="exampleInputEmail1"><font color="red">*</font>是否启用告警邮件</label>
@@ -62,7 +62,7 @@
 
                                     <div class="form-group">
                                         <label for="fromDingName"><font color="red">*</font>输入需要@人的手机号，使用;隔开</label>
-                                        <input type="text" th:value="${dingSet.toPhone}"  autocomplete="off" class="validate[required,maxSize[200]] form-control" name="toPhone" id="toPhone" placeholder="18888888888；18088888888">
+                                        <input type="text" th:value="${dingSet.toPhone}"  autocomplete="off" class="validate[required,maxSize[200]] form-control" name="toPhone" id="toPhone" placeholder="18888888888;18088888888">
                                     </div>
 
                                 </div>
@@ -91,45 +91,6 @@
     <div th:replace="common/footer.html"></div>
 
 </div>
-<!-- ./wrapper
-<link rel="stylesheet" th:href="@{'/static/js/jQuery/validationEngine.jquery.css'}" type="text/css"/>
-<script th:src="@{'/static/js/jQuery/jquery.validationEngine-zh_CN.js'}" type="text/javascript" charset="utf-8"></script>
-<script th:src="@{'/static/js/jQuery/jquery.validationEngine.js'}" type="text/javascript" charset="utf-8"></script>
-<script th:inline="javascript">
-    $(document).ready(function(){
-        $("#form1").validationEngine();
-        $("#sendMail").val([[${mailSet.sendMail}]]);
-        $("#smtpSSL").val([[${mailSet.smtpSSL}]]);
-    });
 
-    function test() {
-        $("#form1").attr("action","/wgcloud/mailset/test");
-        $("#form1").submit();
-    }
-
-    function del(id) {
-        if(confirm('你确定要删除吗？')){
-            window.location.href = "/wgcloud/mailset/del?id="+id;
-        }
-    }
-
-    function setSmtpPort(){
-        if($("#smtpSSL").val()=='0'){
-            $("#smtpPort").val('25')
-        }
-        if($("#smtpSSL").val()=='1'){
-            $("#smtpPort").val('465')
-        }
-    }
-    toastr.options.timeOut = 15000;
-    var msg = [[${msg}]];
-    if(msg!=''){
-        if(msg.indexOf("测试发送失败")>-1){
-            toastr.error(msg);
-        }else{
-            toastr.success(msg);
-        }
-    }
-</script> -->
 </body>
 </html>

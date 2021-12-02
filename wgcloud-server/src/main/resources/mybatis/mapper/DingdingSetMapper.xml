@@ -23,12 +23,12 @@
     </delete>
 
     <insert id="save" parameterType="com.wgcloud.entity.DingSet">
-        INSERT INFO DING_SET
+        INSERT INTO DING_SET
         <trim prefix="(" suffix=")" suffixOverrides=",">
-           <if test="id != null" >ID,</if>
-           <if test="fromDingName != null">FROM_DING_API,</if>
-           <if test="toPhone != null">TO_PHONE,</if>
-           <if test="createTime != null">CREATE_TIME</if>
+            <if test="id != null">ID,</if>
+            <if test="fromDingName != null">FROM_DING_API,</if>
+            <if test="toPhone != null">TO_PHONE,</if>
+            <if test="createTime != null">CREATE_TIME</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">#{id},</if>
@@ -40,14 +40,14 @@
     </insert>
 
     <update id="updateById" parameterType="com.wgcloud.entity.DingSet">
-        UPDATE MAIL_SET
+        UPDATE DING_SET
         <set>
             <if test="fromDingName != null">
                 FROM_DING_API = #{fromDingName},
             </if>
 
             <if test="toPhone != null">
-            TO_PHONE= #{toPhone},
+                TO_PHONE = #{toPhone},
             </if>
         </set>
         WHERE ID = #{id}
@@ -60,6 +60,5 @@
         FROM DING_SET t
         ORDER BY CREATE_TIME DESC
     </select>
-
 
 </mapper>
