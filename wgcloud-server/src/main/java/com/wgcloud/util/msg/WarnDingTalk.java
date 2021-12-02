@@ -16,6 +16,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.wgcloud.util.staticvar.StaticKeys.dingSet;
+
 
 public class WarnDingTalk {
     /*
@@ -25,38 +31,43 @@ public class WarnDingTalk {
     提示告警 Q3  告警规则对应资源存在潜在的错误可能影响到业务。
      */
     @Autowired
-    private  RestUtil restUtil;
-//   输出log
+    private RestUtil restUtil;
+    //   输出log
     private static Logger logger = (Logger) LoggerFactory.getLogger(WarnDingTalk.class);
-//    保存log
+    //    保存log
     private static LogInfoService logInfoService = (LogInfoService) ApplicationContextHelper.getBean(LogInfoService.class);
 
     /**
-     *  监控CPU 大于 90 Q1   大于 70 Q2
+     * 监控CPU 大于 90 Q1   大于 70 Q2
+     *
      * @param cpuState
      * @return
      */
     public static boolean sendCpuWarnInfo(CpuState cpuState) {
         if (cpuState.getSys() != null && cpuState.getSys() >= 70) {
-            if (cpuState.getSys() >= 90){
+            if (cpuState.getSys() >= 90) {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n @15344062110 发生的机器是:" + cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
-                    sendDing(title,text);
-                    logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-                }catch (Exception e){
-                    logger.error("发送CPU告警信息失败：",e);
-                    logInfoService.save("发送CPU告警失败",e.toString(),StaticKeys.LOG_ERROR);
+                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n @15344062110 发生的机器是:" +
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
+                            "http://192.168.75.135:9999/wgcloud/log/list");
+                    sendDing(title, text);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送CPU告警信息失败：", e);
+                    logInfoService.save("发送CPU告警失败", e.toString(), StaticKeys.LOG_ERROR);
                 }
-            }else {
+            } else {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n @15344062110 发生的机器是:" + cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
-                    sendDing(title,text);
-                    logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-                }catch (Exception e){
-                    logger.error("发送CPU告警信息失败：",e);
-                    logInfoService.save("发送CPU告警失败",e.toString(),StaticKeys.LOG_ERROR);
+                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n @15344062110 发生的机器是:" +
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
+                            "http://192.168.75.135:9999/wgcloud/log/list");
+                    sendDing(title, text);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送CPU告警信息失败：", e);
+                    logInfoService.save("发送CPU告警失败", e.toString(), StaticKeys.LOG_ERROR);
                 }
             }
         }
@@ -65,31 +76,37 @@ public class WarnDingTalk {
 
     /**
      * 监控内存 大于 90 Q1   大于 70 Q2
+     *
      * @param memState
      * @return
      */
-    public static boolean sendMemWarnInfo(MemState memState){
-        if (memState.getUsePer() != null && memState.getUsePer() >= 70){
-            if (memState.getUsePer() >= 90){
+    public static boolean sendMemWarnInfo(MemState memState) {
+        if (memState.getUsePer() != null && memState.getUsePer() >= 70) {
+            if (memState.getUsePer() >= 90) {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n @15344062110 发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:" + memState.getUsePer() + "\n\n请尽快点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
-                    sendDing(title,text);
+                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n @15344062110 \t\t " +
+                            "@18248357502 \t\t @15344063119 \n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
+                            + memState.getUsePer() + "\n\n请尽快点击查看" +
+                            "http://192.168.75.135:9999/wgcloud/log/list");
+                    sendDing(title, text);
 
-                    logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-                }catch (Exception e){
-                    logger.error("发送内存告警信息失败：",e);
-                    logInfoService.save("发送内存告警失败",e.toString(),StaticKeys.LOG_ERROR);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送内存告警信息失败：", e);
+                    logInfoService.save("发送内存告警失败", e.toString(), StaticKeys.LOG_ERROR);
                 }
-            }else {
+            } else {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n @15344062110 发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() + "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
-                    sendDing(title,text);
-                    logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-                }catch (Exception e){
-                    logger.error("发送内存告警信息失败：",e);
-                    logInfoService.save("发送内存告警失败",e.toString(),StaticKeys.LOG_ERROR);
+                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n @15344062110 发生的机器是:"
+                            + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() +
+                            "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
+                    sendDing(title, text);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送内存告警信息失败：", e);
+                    logInfoService.save("发送内存告警失败", e.toString(), StaticKeys.LOG_ERROR);
                 }
             }
         }
@@ -99,39 +116,41 @@ public class WarnDingTalk {
 
     /**
      * 主机下线检测
+     *
      * @param systemInfo
      * @param isDown
      * @return
      */
-    public static boolean sendHostDown(SystemInfo systemInfo,boolean isDown){
+    public static boolean sendHostDown(SystemInfo systemInfo, boolean isDown) {
         String key = systemInfo.getId();
-        if (isDown){
-            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))){
+        if (isDown) {
+            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
                 return false;
             }
-            try{
-                String title = ("主机下线告警 "+systemInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** @15344062110 \n\n 主机超过十分钟未上报数据，可能已经下线 " +systemInfo.getHostname()  + "\n\n 主机备注: "
+            try {
+                String title = ("主机下线告警 " + systemInfo.getHostname());
+                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** @15344062110 \n\n " +
+                        "主机超过十分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。 \n\n 如果不在监控该主机，请从主机列表移除同时不在接收该主机告警");
-                sendDing(title,text);
-                WarnPools.MEM_WARN_MAP.put(key,"1");
-                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-            }catch (Exception e){
-                logger.error("主机下线告警发送失败",e);
-                logInfoService.save("主机下线告警发送失败",e.toString(),StaticKeys.LOG_ERROR);
+                sendDing(title, text);
+                WarnPools.MEM_WARN_MAP.put(key, "1");
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("主机下线告警发送失败", e);
+                logInfoService.save("主机下线告警发送失败", e.toString(), StaticKeys.LOG_ERROR);
             }
-        }else {
+        } else {
             WarnPools.MEM_WARN_MAP.remove(key);
-            try{
-                String title = ("主机上线告警恢复 "+systemInfo.getHostname());
-                String text = ("主机上线恢复 " +systemInfo.getHostname()  + "\n\n 主机备注: "
+            try {
+                String title = ("主机上线告警恢复 " + systemInfo.getHostname());
+                String text = ("主机上线恢复 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。");
-                sendDing(title,text);
-                WarnPools.MEM_WARN_MAP.put(key,"1");
-                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
-            }catch (Exception e){
-                logger.error("主机上线恢复信息发送失败",e);
-                logInfoService.save("主机上线恢复信息发送失败",e.toString(),StaticKeys.LOG_ERROR);
+                sendDing(title, text);
+                WarnPools.MEM_WARN_MAP.put(key, "1");
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+            } catch (Exception e) {
+                logger.error("主机上线恢复信息发送失败", e);
+                logInfoService.save("主机上线恢复信息发送失败", e.toString(), StaticKeys.LOG_ERROR);
             }
         }
         return false;
@@ -139,6 +158,7 @@ public class WarnDingTalk {
 
     /**
      * 进程下线检测
+     *
      * @param appInfo
      * @param isDown
      * @return
@@ -150,12 +170,13 @@ public class WarnDingTalk {
                 return false;
             }
             try {
-                String title = ("进程下线告警 "+appInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** @15344062110 \n\n 进程超过十分钟未上报数据，可能已经下线 " +appInfo.getHostname()  + "\n\n "
+                String title = ("进程下线告警 " + appInfo.getHostname());
+                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** @15344062110 \n\n" +
+                        " 进程超过十分钟未上报数据，可能已经下线 " + appInfo.getHostname() + "\n\n "
                         + appInfo.getAppName() + "。 \n\n 如果不在监控该进程，请从进程列表移除同时不在接收该进程告警");
-                sendDing(title,text);
-                WarnPools.MEM_WARN_MAP.put(key,"1");
-                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
+                sendDing(title, text);
+                WarnPools.MEM_WARN_MAP.put(key, "1");
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
             } catch (Exception e) {
                 logger.error("发送进程下线告警邮件失败：", e);
                 logInfoService.save("发送进程下线告警错误", e.toString(), StaticKeys.LOG_ERROR);
@@ -163,12 +184,12 @@ public class WarnDingTalk {
         } else {
             WarnPools.MEM_WARN_MAP.remove(key);
             try {
-                String title = ("进程上线告警恢复 "+appInfo.getHostname());
-                String text = ("进程告警恢复" +appInfo.getHostname()  + "\n\n "
+                String title = ("进程上线告警恢复 " + appInfo.getHostname());
+                String text = ("进程告警恢复" + appInfo.getHostname() + "\n\n "
                         + appInfo.getAppName() + "。");
-                sendDing(title,text);
-                WarnPools.MEM_WARN_MAP.put(key,"1");
-                logInfoService.save(title,text,StaticKeys.LOG_ERROR);
+                sendDing(title, text);
+                WarnPools.MEM_WARN_MAP.put(key, "1");
+                logInfoService.save(title, text, StaticKeys.LOG_ERROR);
             } catch (Exception e) {
                 logger.error("发送进程恢复上线通知邮件失败：", e);
                 logInfoService.save("发送进程恢复上线通知错误", e.toString(), StaticKeys.LOG_ERROR);
@@ -185,9 +206,11 @@ public class WarnDingTalk {
             }
             try {
                 String title = "服务接口检测告警：" + heathMonitor.getAppName();
-                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n @15344062110 服务接口：" + heathMonitor.getHeathUrl() + "\n\n 响应状态码为" + heathMonitor.getHeathStatus() + "  可能存在异常，请查看";
-               //发送钉钉告警
-                sendDing(title,text);
+                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n @15344062110 服务接口："
+                        + heathMonitor.getHeathUrl() + "\n\n 响应状态码为" + heathMonitor.getHeathStatus()
+                        + "  可能存在异常，请查看";
+                //发送钉钉告警
+                sendDing(title, text);
                 //标记已发送过告警信息
                 WarnPools.MEM_WARN_MAP.put(key, "1");
                 //记录发送信息
@@ -200,9 +223,10 @@ public class WarnDingTalk {
             WarnPools.MEM_WARN_MAP.remove(key);
             try {
                 String title = "服务接口恢复正常通知：" + heathMonitor.getAppName();
-                String text = "服务接口恢复正常通知：" + heathMonitor.getHeathUrl() + "，响应状态码为" + heathMonitor.getHeathStatus() + "";
-               //发送钉钉信息
-                sendDing(title,text);
+                String text = "服务接口恢复正常通知：" + heathMonitor.getHeathUrl() + "，响应状态码为"
+                        + heathMonitor.getHeathStatus() + "";
+                //发送钉钉信息
+                sendDing(title, text);
                 //记录发送信息
                 logInfoService.save(title, text, StaticKeys.LOG_ERROR);
             } catch (Exception e) {
@@ -213,30 +237,72 @@ public class WarnDingTalk {
         return false;
     }
 
+    // 获取钉钉api和告警接收人
+    public static Map<String, Object> getWarnInfo(DingSet dingSet) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("toPhone", dingSet.getToPhone());
+        map.put("fromAPI", dingSet.getFromDingName());
+        return map;
+    }
+
+    //    获取告警接收人手机号
+    public static String iPhoneNum() {
+        StringBuilder stringBuilder = new StringBuilder();
+        String Phone = (String) getWarnInfo(dingSet).get("toPhone");
+        stringBuilder.append(Phone.replace(";", "\n"));
+        int x = 0;
+        stringBuilder.insert(x += 0, "\"");
+        try {
+            for (int i = 0; i < (Phone.length() + 1) / 2; i++) {
+                if (i == 0) {
+                    stringBuilder.insert(x += 12, "\"");
+                } else {
+                    stringBuilder.insert(x += 2, "\"");
+                    stringBuilder.insert(x += 12, "\"");
+                }
+
+            }
+        } catch (StringIndexOutOfBoundsException e) {
+            logger.error("获取告警手机号失败", e);
+            logInfoService.save("获取告警手机号失败", e.toString(), StaticKeys.LOG_ERROR);
+        }
+
+        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString();
+    }
+
+
     /*
     发送钉钉消息
      */
     public static String sendDing(String title, String text) {
 
 //        消息模板
-
+        System.out.println("DingDingIphone" + iPhoneNum());
+        String[] iPhoneNum = getWarnInfo(dingSet).get("toPhone").toString().split(";");
         String textmsg = "{ \"msgtype\": \"markdown\",\n" +
                 "     \"markdown\": {\n" +
-                "         \"title\": \""+ title +"\" ,\n" +
+                "         \"title\": \"" + title + "\" ,\n" +
                 "         \"text\": \"" + text + "\" \n" +
                 "     },\n" +
                 "      \"at\": {\n" +
                 "          \"atMobiles\": [\n" +
-                "              \"15344062110\"\n" +
+                "               " + iPhoneNum() + "" +
+//                "              \"15344062110\"\n" +
+//                "                \"18248357502\"\n" +
                 "          ],\n" +
                 "          \"atUserIds\": [\n" +
-                "              \"15344062110\"\n" +
+                "               " + iPhoneNum() + "" +
+//                "              \"15344062110\"\n" +
+//                "                \"18248357502\"\n" +
                 "          ],\n" +
                 "          \"isAtAll\": false\n" +
                 "      }}";
         try {
             HttpClient httpClient = HttpClients.createDefault();
-            HttpPost httpPost = new HttpPost("https://oapi.dingtalk.com/robot/send?access_token=e097866b2b35e774dcaf1087235ed986392bd4ecf42d1091bc1070063867dd95");
+            HttpPost httpPost = new HttpPost("" + getWarnInfo(dingSet).get("fromAPI") + "");
+//            logger.info("钉钉api信息:",dingSet.getFromDingName());
             httpPost.setHeader("Content-type", "application/json;utf-8");
             StringEntity stringEntity = new StringEntity(textmsg, "utf-8");
             httpPost.setEntity(stringEntity);
@@ -246,8 +312,8 @@ public class WarnDingTalk {
 //            }
             return "send success";
         } catch (Exception e) {
-            logger.error("DingDing发送错误：",e);
-            logInfoService.save("发送DingDing错误，",e.toString(),StaticKeys.LOG_ERROR);
+            logger.error("DingDing发送错误：", e);
+            logInfoService.save("发送DingDing错误，", e.toString(), StaticKeys.LOG_ERROR);
             return "send error";
         }
     }
