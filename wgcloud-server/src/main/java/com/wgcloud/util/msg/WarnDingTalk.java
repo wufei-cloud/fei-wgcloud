@@ -46,6 +46,10 @@ public class WarnDingTalk {
     @Resource
     private DingSetServer dingSetServer;
 
+    private static String Phone;
+
+    private static String DingdingAPI;
+
     /**
      * 监控CPU 大于 90 Q1   大于 70 Q2
      *
@@ -246,36 +250,23 @@ public class WarnDingTalk {
         return false;
     }
 
-//    @Scheduled(initialDelay = 60000L, fixedRate = 60L * 10000)
-    public DingSet selectToPhone() {
+    @Scheduled(initialDelay = 60000L, fixedRate = 60L * 10000)
+    public void selectToPhone() {
         Map<String, Object> parase = new HashMap<>();
         DingSet ToPhones = null;
-//        DingSetServer dingSetServer = new DingSetServer();
         try {
             List<DingSet> list = dingSetServer.selectByParams(parase);
-            ToPhones = list.get(0);
-            System.out.println("测试测试测试：" + ToPhones.getToPhone());
+            Phone = list.get(0).getToPhone();
+            DingdingAPI = list.get(0).getFromDingName();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return ToPhones;
     }
 
-    // 获取钉钉api和告警接收人
-    public static Map<String, Object> getWarnInfo(DingSet dingSet) {
-        WarnDingTalk warnDingTalk = new WarnDingTalk();
-        Map<String, Object> map = new HashMap<>();
-        map.put("toPhone", warnDingTalk.selectToPhone().getToPhone());
-        map.put("fromAPI", warnDingTalk.selectToPhone().getFromDingName());
-        return map;
-    }
 
     //    获取告警接收人手机号
     public static String iPhoneNum() {
-        WarnDingTalk warnDingTalk = new WarnDingTalk();
         StringBuilder stringBuilder = new StringBuilder();
-        String Phone = warnDingTalk.selectToPhone().getToPhone();
-        System.out.println(warnDingTalk.selectToPhone().getToPhone());
         stringBuilder.append(Phone.replace(";", "\n"));
         int x = 0;
         stringBuilder.insert(x += 0, "\"");
@@ -289,7 +280,6 @@ public class WarnDingTalk {
                 }
 
             }
-            System.out.println("获取结束");
         } catch (StringIndexOutOfBoundsException e) {
             logger.error("获取告警手机号失败", e);
             logInfoService.save("获取告警手机号失败", e.toString(), StaticKeys.LOG_ERROR);
@@ -300,9 +290,7 @@ public class WarnDingTalk {
 
     //    钉钉告警@人
     public static String getPhone() {
-        WarnDingTalk warnDingTalk = new WarnDingTalk();
-        StringBuilder stringBuilder = new StringBuilder();
-        String Phone = warnDingTalk.selectToPhone().getToPhone();
+        StringBuilder stringBuilder = new StringBuilder();;
         stringBuilder.append(Phone.replace(";", "\t\t@"));
         stringBuilder.insert(0, "@");
         return stringBuilder.toString();
@@ -314,8 +302,6 @@ public class WarnDingTalk {
     发送钉钉消息
      */
     public static String sendDing(String title, String text) {
-        WarnDingTalk warnDingTalk = new WarnDingTalk();
-        System.out.println(warnDingTalk.selectToPhone().getToPhone());
 //        消息模板
         String textmsg = "{ \"msgtype\": \"markdown\",\n" +
                 "     \"markdown\": {\n" +
@@ -337,8 +323,7 @@ public class WarnDingTalk {
                 "      }}";
         try {
             HttpClient httpClient = HttpClients.createDefault();
-            HttpPost httpPost = new HttpPost("" + warnDingTalk.selectToPhone().getFromDingName() + "");
-//            logger.info("钉钉api信息:",dingSet.getFromDingName());
+            HttpPost httpPost = new HttpPost("" + DingdingAPI + "");
             httpPost.setHeader("Content-type", "application/json;utf-8");
             StringEntity stringEntity = new StringEntity(textmsg, "utf-8");
             httpPost.setEntity(stringEntity);
