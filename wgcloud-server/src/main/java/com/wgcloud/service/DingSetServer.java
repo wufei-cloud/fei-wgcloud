@@ -31,7 +31,6 @@ public class DingSetServer {
     }
 
     public int updateById(DingSet DingSet) throws Exception {
-        System.out.print("开始执行更新语句");
         return dingSetMapper.updateById(DingSet);
     }
 

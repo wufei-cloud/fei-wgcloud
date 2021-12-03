@@ -85,8 +85,8 @@ public class WarnDingTalk {
             if (memState.getUsePer() >= 90) {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n @15344062110 \t\t " +
-                            "@18248357502 \t\t @15344063119 \n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
+                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n "+getPhone()
+                            +"\n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
                             + memState.getUsePer() + "\n\n请尽快点击查看" +
                             "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -99,7 +99,7 @@ public class WarnDingTalk {
             } else {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n @15344062110 发生的机器是:"
+                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n "+getPhone()+" 发生的机器是:"
                             + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() +
                             "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -129,7 +129,7 @@ public class WarnDingTalk {
             }
             try {
                 String title = ("主机下线告警 " + systemInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** @15344062110 \n\n " +
+                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n \"+getPhone()+\" \n\n " +
                         "主机超过十分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。 \n\n 如果不在监控该主机，请从主机列表移除同时不在接收该主机告警");
                 sendDing(title, text);
@@ -254,7 +254,7 @@ public class WarnDingTalk {
         int x = 0;
         stringBuilder.insert(x += 0, "\"");
         try {
-            for (int i = 0; i < (Phone.length() + 1) / 2; i++) {
+            for (int i = 0; i < (Phone.length() + 1) / 12; i++) {
                 if (i == 0) {
                     stringBuilder.insert(x += 12, "\"");
                 } else {
@@ -268,8 +268,17 @@ public class WarnDingTalk {
             logInfoService.save("获取告警手机号失败", e.toString(), StaticKeys.LOG_ERROR);
         }
 
-        System.out.println(stringBuilder.toString());
         return stringBuilder.toString();
+    }
+
+//    钉钉告警@人
+    public static String getPhone(){
+        StringBuilder stringBuilder = new StringBuilder();
+        String Phone = (String) getWarnInfo(dingSet).get("toPhone");
+        stringBuilder.append(Phone.replace(";", "\t\t@"));
+        stringBuilder.insert(0,"@");
+        return stringBuilder.toString();
+
     }
 
 
@@ -279,8 +288,6 @@ public class WarnDingTalk {
     public static String sendDing(String title, String text) {
 
 //        消息模板
-        System.out.println("DingDingIphone" + iPhoneNum());
-        String[] iPhoneNum = getWarnInfo(dingSet).get("toPhone").toString().split(";");
         String textmsg = "{ \"msgtype\": \"markdown\",\n" +
                 "     \"markdown\": {\n" +
                 "         \"title\": \"" + title + "\" ,\n" +
