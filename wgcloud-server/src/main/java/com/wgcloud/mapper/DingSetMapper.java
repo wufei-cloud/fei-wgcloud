@@ -18,6 +18,8 @@ public interface DingSetMapper {
 
     public int updateById(DingSet DingSet) throws Exception;
 
+    public List<DingSet> selectByParams() throws Exception;
+
 
 
 }

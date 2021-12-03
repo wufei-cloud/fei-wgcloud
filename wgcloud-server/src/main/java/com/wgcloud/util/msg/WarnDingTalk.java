@@ -1,8 +1,8 @@
 package com.wgcloud.util.msg;
 
 import com.wgcloud.common.ApplicationContextHelper;
-import com.wgcloud.config.DingTalk;
 import com.wgcloud.entity.*;
+import com.wgcloud.service.DingSetServer;
 import com.wgcloud.service.LogInfoService;
 import com.wgcloud.util.RestUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
@@ -15,14 +15,20 @@ import org.apache.http.impl.client.HttpClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
+import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.wgcloud.util.staticvar.StaticKeys.dingSet;
 
-
+@Controller
 public class WarnDingTalk {
     /*
     紧急告警 Q0  告警规则对应资源发生紧急故障，影响业务视为紧急告警。
@@ -36,6 +42,9 @@ public class WarnDingTalk {
     private static Logger logger = (Logger) LoggerFactory.getLogger(WarnDingTalk.class);
     //    保存log
     private static LogInfoService logInfoService = (LogInfoService) ApplicationContextHelper.getBean(LogInfoService.class);
+
+    @Resource
+    private DingSetServer dingSetServer;
 
     /**
      * 监控CPU 大于 90 Q1   大于 70 Q2
@@ -85,8 +94,8 @@ public class WarnDingTalk {
             if (memState.getUsePer() >= 90) {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n "+getPhone()
-                            +"\n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
+                    String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n " + getPhone()
+                            + "\n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
                             + memState.getUsePer() + "\n\n请尽快点击查看" +
                             "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -99,7 +108,7 @@ public class WarnDingTalk {
             } else {
                 try {
                     String title = ("内存告警");
-                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n "+getPhone()+" 发生的机器是:"
+                    String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n " + getPhone() + " 发生的机器是:"
                             + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() +
                             "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -237,19 +246,36 @@ public class WarnDingTalk {
         return false;
     }
 
+//    @Scheduled(initialDelay = 60000L, fixedRate = 60L * 10000)
+    public DingSet selectToPhone() {
+        Map<String, Object> parase = new HashMap<>();
+        DingSet ToPhones = null;
+//        DingSetServer dingSetServer = new DingSetServer();
+        try {
+            List<DingSet> list = dingSetServer.selectByParams(parase);
+            ToPhones = list.get(0);
+            System.out.println("测试测试测试：" + ToPhones.getToPhone());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ToPhones;
+    }
+
     // 获取钉钉api和告警接收人
     public static Map<String, Object> getWarnInfo(DingSet dingSet) {
+        WarnDingTalk warnDingTalk = new WarnDingTalk();
         Map<String, Object> map = new HashMap<>();
-
-        map.put("toPhone", dingSet.getToPhone());
-        map.put("fromAPI", dingSet.getFromDingName());
+        map.put("toPhone", warnDingTalk.selectToPhone().getToPhone());
+        map.put("fromAPI", warnDingTalk.selectToPhone().getFromDingName());
         return map;
     }
 
     //    获取告警接收人手机号
     public static String iPhoneNum() {
+        WarnDingTalk warnDingTalk = new WarnDingTalk();
         StringBuilder stringBuilder = new StringBuilder();
-        String Phone = (String) getWarnInfo(dingSet).get("toPhone");
+        String Phone = warnDingTalk.selectToPhone().getToPhone();
+        System.out.println(warnDingTalk.selectToPhone().getToPhone());
         stringBuilder.append(Phone.replace(";", "\n"));
         int x = 0;
         stringBuilder.insert(x += 0, "\"");
@@ -263,6 +289,7 @@ public class WarnDingTalk {
                 }
 
             }
+            System.out.println("获取结束");
         } catch (StringIndexOutOfBoundsException e) {
             logger.error("获取告警手机号失败", e);
             logInfoService.save("获取告警手机号失败", e.toString(), StaticKeys.LOG_ERROR);
@@ -271,12 +298,13 @@ public class WarnDingTalk {
         return stringBuilder.toString();
     }
 
-//    钉钉告警@人
-    public static String getPhone(){
+    //    钉钉告警@人
+    public static String getPhone() {
+        WarnDingTalk warnDingTalk = new WarnDingTalk();
         StringBuilder stringBuilder = new StringBuilder();
-        String Phone = (String) getWarnInfo(dingSet).get("toPhone");
+        String Phone = warnDingTalk.selectToPhone().getToPhone();
         stringBuilder.append(Phone.replace(";", "\t\t@"));
-        stringBuilder.insert(0,"@");
+        stringBuilder.insert(0, "@");
         return stringBuilder.toString();
 
     }
@@ -286,7 +314,8 @@ public class WarnDingTalk {
     发送钉钉消息
      */
     public static String sendDing(String title, String text) {
-
+        WarnDingTalk warnDingTalk = new WarnDingTalk();
+        System.out.println(warnDingTalk.selectToPhone().getToPhone());
 //        消息模板
         String textmsg = "{ \"msgtype\": \"markdown\",\n" +
                 "     \"markdown\": {\n" +
@@ -308,7 +337,7 @@ public class WarnDingTalk {
                 "      }}";
         try {
             HttpClient httpClient = HttpClients.createDefault();
-            HttpPost httpPost = new HttpPost("" + getWarnInfo(dingSet).get("fromAPI") + "");
+            HttpPost httpPost = new HttpPost("" + warnDingTalk.selectToPhone().getFromDingName() + "");
 //            logger.info("钉钉api信息:",dingSet.getFromDingName());
             httpPost.setHeader("Content-type", "application/json;utf-8");
             StringEntity stringEntity = new StringEntity(textmsg, "utf-8");

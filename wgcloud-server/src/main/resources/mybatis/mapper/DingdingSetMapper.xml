@@ -61,4 +61,11 @@
         ORDER BY CREATE_TIME DESC
     </select>
 
+    <select id="selectByParams" parameterType="map" resultMap="resultMap">
+        SELECT
+        <include refid="dingTables" />
+        FROM DING_SET
+        ORDER BY CREATE_TIME DESC
+    </select>
+
 </mapper>

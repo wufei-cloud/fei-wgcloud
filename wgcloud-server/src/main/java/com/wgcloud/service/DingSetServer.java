@@ -34,6 +34,10 @@ public class DingSetServer {
         return dingSetMapper.updateById(DingSet);
     }
 
+    public List<DingSet> selectByParams(Map<String, Object> params) throws Exception {
+        return dingSetMapper.selectAllByParms(params);
+    }
+
 
     @Autowired
     private DingSetMapper dingSetMapper;

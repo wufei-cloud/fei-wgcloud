@@ -13,13 +13,13 @@ public class DingSet extends BaseEntity {
     private static final long serialVersionUID = -8284741180883299533L;
 
     /**
-     * 发送邮箱的帐号
+     * 发送钉钉的帐号
      */
     private String fromDingName;
 
 
     /**
-     * 接受告警信息的邮件
+     * 接受告警信息的钉钉
      */
     private String toPhone;
 
