@@ -61,7 +61,8 @@ public class WarnDingTalk {
             if (cpuState.getSys() >= 90) {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n @15344062110 发生的机器是:" +
+                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n "+ getPhone()
+                            +"发生的机器是:" +
                             cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
                             "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -73,7 +74,8 @@ public class WarnDingTalk {
             } else {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n @15344062110 发生的机器是:" +
+                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n "+ getPhone()
+                            +" 发生的机器是:" +
                             cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
                             "http://192.168.75.135:9999/wgcloud/log/list");
                     sendDing(title, text);
@@ -142,7 +144,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = ("主机下线告警 " + systemInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n \"+getPhone()+\" \n\n " +
+                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n "+ getPhone()
+                        +" \n\n " +
                         "主机超过十分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。 \n\n 如果不在监控该主机，请从主机列表移除同时不在接收该主机告警");
                 sendDing(title, text);
@@ -184,7 +187,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = ("进程下线告警 " + appInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** @15344062110 \n\n" +
+                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** "+ getPhone()
+                        +" \n\n" +
                         " 进程超过十分钟未上报数据，可能已经下线 " + appInfo.getHostname() + "\n\n "
                         + appInfo.getAppName() + "。 \n\n 如果不在监控该进程，请从进程列表移除同时不在接收该进程告警");
                 sendDing(title, text);
@@ -219,7 +223,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = "服务接口检测告警：" + heathMonitor.getAppName();
-                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n @15344062110 服务接口："
+                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n "+ getPhone()
+                        +" 服务接口："
                         + heathMonitor.getHeathUrl() + "\n\n 响应状态码为" + heathMonitor.getHeathStatus()
                         + "  可能存在异常，请查看";
                 //发送钉钉告警
@@ -250,6 +255,7 @@ public class WarnDingTalk {
         return false;
     }
 
+    @Bean
     @Scheduled(initialDelay = 60000L, fixedRate = 60L * 10000)
     public void selectToPhone() {
         Map<String, Object> parase = new HashMap<>();
