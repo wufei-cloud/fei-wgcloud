@@ -2,6 +2,8 @@ package com.wgcloud.controller;
 
 import com.wgcloud.config.CommonConfig;
 import com.wgcloud.entity.AccountInfo;
+import com.wgcloud.entity.UserPass;
+import com.wgcloud.service.UserPassServer;
 import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.StaticKeys;
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @version v2.3
@@ -31,6 +36,9 @@ public class LoginCotroller {
 
     @Resource
     private CommonConfig commonConfig;
+
+    @Resource
+    private UserPassServer userPassServer;
 
     /**
      * 转向到登录页面
@@ -66,11 +74,14 @@ public class LoginCotroller {
      * @return
      */
     @RequestMapping(value = "login")
-    public String login(Model model, HttpServletRequest request) {
-        String userName = request.getParameter("userName");
-        String passwd = request.getParameter("md5pwd");
+    public String login(Model model, HttpServletRequest request) throws Exception {
+        String userName = request.getParameter("userName").trim();
+        String passwd = request.getParameter("md5pwd").trim();
         String code = request.getParameter(StaticKeys.SESSION_CODE);
         HttpSession session = request.getSession();
+        List<UserPass> list = userPassServer.selectUserPass(userName);
+        UserPass DBUser = list.get(0);
+        System.out.println(DBUser.getReghts_id());
         try {
             if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(passwd) && !StringUtils.isEmpty(code)) {
                 if (!code.equals(session.getAttribute(StaticKeys.SESSION_CODE))) {
@@ -78,9 +89,9 @@ public class LoginCotroller {
                     return "login/login";
                 }
                 AccountInfo accountInfo = new AccountInfo();
-                if (MD5.GetMD5Code(commonConfig.getAdmindPwd()).equals(passwd) && StaticKeys.ADMIN_ACCOUNT.equals(userName)) {
-                    accountInfo.setAccount(StaticKeys.ADMIN_ACCOUNT);
-                    accountInfo.setId(StaticKeys.ADMIN_ACCOUNT);
+                if (MD5.GetMD5Code(DBUser.getPassword().trim()).equals(passwd) && (DBUser.getUsername().trim()).equals(userName)) {
+                    accountInfo.setAccount(DBUser.getUsername());
+                    accountInfo.setId(DBUser.getUsername());
                     request.getSession().setAttribute(StaticKeys.LOGIN_KEY, accountInfo);
                     return "redirect:/dash/main";
                 }
