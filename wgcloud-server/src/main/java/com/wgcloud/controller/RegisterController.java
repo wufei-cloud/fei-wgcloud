@@ -33,9 +33,8 @@ public class RegisterController {
         String PasswdAgain = request.getParameter("PasswdAgain");
         String Token = request.getParameter("Token");
         String token = "2c760240585a429697845f00c7704cad";
-        System.out.println("Token是" + Token);
-        System.out.println(username);
         List<RegisterSet> list = registerServer.selectUserPass(username);
+        System.out.println(Token);
         if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(Passwd) && !StringUtils.isEmpty(PasswdAgain) && !StringUtils.isEmpty(Token)) {
             try {
                 if (list.get(0) != null) {
@@ -44,7 +43,7 @@ public class RegisterController {
                 }
             } catch (IndexOutOfBoundsException e) {
                 if (MD5.GetMD5Code(Passwd).equals(MD5.GetMD5Code(PasswdAgain))) {
-                    if (Token.equals(token)) {
+                    if (MD5.GetMD5Code(Token).equals(MD5.GetMD5Code(token))) {
                         registerSet.setUsername(username);
                         registerSet.setPassword(Passwd);
                         registerServer.save(registerSet);
