@@ -1,7 +1,7 @@
 package com.wgcloud.entity;
 
 
-public class UserPass extends BaseEntity{
+public class LoginSet extends BaseEntity{
     private String username;
 
     private String password;

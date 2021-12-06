@@ -2,8 +2,8 @@ package com.wgcloud.controller;
 
 import com.wgcloud.config.CommonConfig;
 import com.wgcloud.entity.AccountInfo;
-import com.wgcloud.entity.UserPass;
-import com.wgcloud.service.UserPassServer;
+import com.wgcloud.entity.LoginSet;
+import com.wgcloud.service.LoginServer;
 import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.StaticKeys;
 import org.apache.commons.lang3.StringUtils;
@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @version v2.3
@@ -38,7 +36,7 @@ public class LoginCotroller {
     private CommonConfig commonConfig;
 
     @Resource
-    private UserPassServer userPassServer;
+    private LoginServer loginServer;
 
     /**
      * 转向到登录页面
@@ -80,10 +78,8 @@ public class LoginCotroller {
         String code = request.getParameter(StaticKeys.SESSION_CODE);
 
         HttpSession session = request.getSession();
-        List<UserPass> list = userPassServer.selectUserPass(userName);
-        UserPass DBUser = list.get(0);
-        System.out.println(passwd);
-        System.out.println(DBUser.getPassword());
+        List<LoginSet> list = loginServer.selectUserPass(userName);
+        LoginSet DBUser = list.get(0);
         try {
             if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(passwd) && !StringUtils.isEmpty(code)) {
                 if (!code.equals(session.getAttribute(StaticKeys.SESSION_CODE))) {

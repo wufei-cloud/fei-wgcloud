@@ -1,11 +1,11 @@
 package com.wgcloud.controller;
 
-import com.wgcloud.entity.UserPass;
-import com.wgcloud.service.UserPassServer;
+import com.wgcloud.entity.LoginSet;
+import com.wgcloud.entity.RegisterSet;
+import com.wgcloud.service.RegisterServer;
 import com.wgcloud.util.shorturl.MD5;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,7 +18,7 @@ import java.util.List;
 public class RegisterController {
 
     @Resource
-    private UserPassServer userPassServer;
+    private RegisterServer registerServer;
 
 
     @RequestMapping("toRegister")
@@ -27,23 +27,31 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "register")
-    public String Register(UserPass userPass, Model model, HttpServletRequest request) throws Exception {
+    public String Register(RegisterSet registerSet, Model model, HttpServletRequest request) throws Exception {
         String username = request.getParameter("userName");
-        String password = request.getParameter("Passwd");
+        String Passwd = request.getParameter("Passwd");
         String PasswdAgain = request.getParameter("PasswdAgain");
         String Token = request.getParameter("Token");
-        List<UserPass> list = userPassServer.selectUserPass(username);
-        if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password) && !StringUtils.isEmpty(PasswdAgain) && !StringUtils.isEmpty(Token)) {
+        String token = "2c760240585a429697845f00c7704cad";
+        System.out.println("Token是" + Token);
+        System.out.println(username);
+        List<RegisterSet> list = registerServer.selectUserPass(username);
+        if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(Passwd) && !StringUtils.isEmpty(PasswdAgain) && !StringUtils.isEmpty(Token)) {
             try {
                 if (list.get(0) != null) {
                     model.addAttribute("error", "当前用户已存在，请更换用户后重试！");
                     return "register/register";
                 }
             } catch (IndexOutOfBoundsException e) {
-                if (MD5.GetMD5Code(password).equals(MD5.GetMD5Code(PasswdAgain))) {
-                    userPass.setUsername(username);
-                    userPass.setPassword(password);
-                    userPassServer.save(userPass);
+                if (MD5.GetMD5Code(Passwd).equals(MD5.GetMD5Code(PasswdAgain))) {
+                    if (Token.equals(token)) {
+                        registerSet.setUsername(username);
+                        registerSet.setPassword(Passwd);
+                        registerServer.save(registerSet);
+                    } else {
+                        model.addAttribute("error", "输入的凭证不正确！");
+                        return "register/register";
+                    }
                 } else {
                     model.addAttribute("error", "两次密码不一致，请重新输入！");
                     return "register/register";
