@@ -31,8 +31,10 @@ public class AuthRestFilter implements Filter {
     @Autowired
     CommonConfig commonConfig;
 
-    String[] static_resource = {"/agent/minTask", "/agentGo/minTask", "login/toLogin", "login/login", "appInfo/agentList",
-            "/code/get", ".css", ".js", ".jpg", ".png", ".ico", ".gif", "font", ".eot", ".woff", ".svg", ".ttf", ".woff2"};
+    String[] static_resource = {"/agent/minTask", "/agentGo/minTask","Register/toRegister","Register/register",
+            "register/register" , "appInfo/agentList",
+            "/code/get", ".css", ".js", ".jpg", ".png", ".ico", ".gif", "font", ".eot", ".woff", ".svg", ".ttf", ".woff2",
+            "login/toLogin", "login/login"};
 
     String[] dash_views = {"/dash/main", "/dash/systemInfoList", "/dash/detail", "/dash/chart"};
 

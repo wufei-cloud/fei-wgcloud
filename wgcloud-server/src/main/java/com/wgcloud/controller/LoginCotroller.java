@@ -78,10 +78,12 @@ public class LoginCotroller {
         String userName = request.getParameter("userName").trim();
         String passwd = request.getParameter("md5pwd").trim();
         String code = request.getParameter(StaticKeys.SESSION_CODE);
+
         HttpSession session = request.getSession();
         List<UserPass> list = userPassServer.selectUserPass(userName);
         UserPass DBUser = list.get(0);
-        System.out.println(DBUser.getReghts_id());
+        System.out.println(passwd);
+        System.out.println(DBUser.getPassword());
         try {
             if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(passwd) && !StringUtils.isEmpty(code)) {
                 if (!code.equals(session.getAttribute(StaticKeys.SESSION_CODE))) {
