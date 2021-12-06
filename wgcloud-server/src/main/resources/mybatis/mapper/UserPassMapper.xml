@@ -13,6 +13,22 @@
         ,USERNAME,PASSWD,REGHTS
     </sql>
 
+    <insert id="save" parameterType="com.wgcloud.entity.UserPass">
+        INSERT INTO USER_TABLES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">ID,</if>
+            <if test="username != null">USERNAME,</if>
+            <if test="password != null">PASSWD,</if>
+            <!--<if test="reghts_id != null">REGHTS</if>-->
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="reghts_id != null">#{reghts_id}</if>
+        </trim>
+
+    </insert>
 
     <select id="selectUserPass" parameterType="map" resultMap="resultMap">
         SELECT
@@ -23,7 +39,7 @@
 
     <select id="selectByParams" parameterType="map" resultMap="resultMap">
         SELECT
-        <include refid="UserTables" />
+        <include refid="UserTables"/>
         FROM USER_TABLES
         ORDER BY REGHTS DESC
     </select>

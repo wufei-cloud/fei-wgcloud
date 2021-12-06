@@ -15,6 +15,7 @@ public class UserPassServer {
         userpass.setId(UUIDUtil.getUUID());
         userpass.setUsername(userpass.getUsername().trim());
         userpass.setPassword(userpass.getPassword().trim());
+        userPassMapper.save(userpass);
     }
 
     public List<UserPass> selectUserPass(String username) throws Exception{
