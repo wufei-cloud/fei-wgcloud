@@ -1,7 +1,9 @@
 package com.wgcloud.controller;
 
+import com.wgcloud.entity.LoginSet;
 import com.wgcloud.entity.MailSet;
 import com.wgcloud.service.LogInfoService;
+import com.wgcloud.service.LoginServer;
 import com.wgcloud.service.MailSetService;
 import com.wgcloud.util.msg.WarnMailUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
@@ -38,6 +40,8 @@ public class MailSetController {
     private MailSetService mailSetService;
     @Resource
     private LogInfoService logInfoService;
+    @Resource
+    private LoginServer loginServer;
 
 
     /**
@@ -60,6 +64,7 @@ public class MailSetController {
             logInfoService.save("查询邮件设置错误：", e.toString(), StaticKeys.LOG_ERROR);
 
         }
+
         String msg = request.getParameter("msg");
         if (!StringUtils.isEmpty(msg)) {
             if (msg.equals("save")) {
@@ -77,6 +82,7 @@ public class MailSetController {
         } else {
             model.addAttribute("msg", "");
         }
+
         return "mail/view";
     }
 
@@ -92,12 +98,17 @@ public class MailSetController {
     @RequestMapping(value = "save")
     public String saveMailSet(MailSet mailSet, Model model, HttpServletRequest request) {
         try {
-            if (StringUtils.isEmpty(mailSet.getId())) {
-                mailSetService.save(mailSet);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(mailSet.getId())) {
+                    mailSetService.save(mailSet);
+                } else {
+                    mailSetService.updateById(mailSet);
+                }
+                StaticKeys.mailSet = mailSet;
             } else {
-                mailSetService.updateById(mailSet);
+                return "redirect:list";
             }
-            StaticKeys.mailSet = mailSet;
         } catch (Exception e) {
             logger.error("保存邮件设置信息错误：", e);
             logInfoService.save("邮件设置信息错误", e.toString(), StaticKeys.LOG_ERROR);
@@ -109,13 +120,18 @@ public class MailSetController {
     public String test(MailSet mailSet, Model model, HttpServletRequest request) {
         String result = "success";
         try {
-            if (StringUtils.isEmpty(mailSet.getId())) {
-                mailSetService.save(mailSet);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(mailSet.getId())) {
+                    mailSetService.save(mailSet);
+                } else {
+                    mailSetService.updateById(mailSet);
+                }
+                StaticKeys.mailSet = mailSet;
+                result = WarnMailUtil.sendMail(mailSet.getToMail(), "WGCLOUD测试邮件发送", "WGCLOUD测试邮件发送");
             } else {
-                mailSetService.updateById(mailSet);
+                return "redirect:list";
             }
-            StaticKeys.mailSet = mailSet;
-            result = WarnMailUtil.sendMail(mailSet.getToMail(), "WGCLOUD测试邮件发送", "WGCLOUD测试邮件发送");
         } catch (Exception e) {
             logger.error("测试邮件设置信息错误：", e);
             logInfoService.save("测试邮件设置信息错误", e.toString(), StaticKeys.LOG_ERROR);
@@ -136,9 +152,14 @@ public class MailSetController {
     public String delete(Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         String errorMsg = "删除告警邮件设置错误：";
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                mailSetService.deleteById(request.getParameter("id").split(","));
-                StaticKeys.mailSet = null;
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    mailSetService.deleteById(request.getParameter("id").split(","));
+                    StaticKeys.mailSet = null;
+                }
+            } else {
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);

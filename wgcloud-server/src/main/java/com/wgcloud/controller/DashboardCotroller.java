@@ -70,6 +70,8 @@ public class DashboardCotroller {
     HeathMonitorService heathMonitorService;
     @Autowired
     HostInfoService hostInfoService;
+    @Resource
+    private LoginServer loginServer;
 
     /**
      * 根据条件查询host列表
@@ -275,16 +277,23 @@ public class DashboardCotroller {
     public String delete(Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         String errorMsg = "删除主机信息错误：";
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                String[] ids = request.getParameter("id").split(",");
-                for (String id : ids) {
-                    SystemInfo sys = systemInfoService.selectById(id);
-                    if (!StringUtils.isEmpty(sys.getHostname())) {
-                        hostInfoService.deleteByIp(sys.getHostname().split(","));
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+
+
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    String[] ids = request.getParameter("id").split(",");
+                    for (String id : ids) {
+                        SystemInfo sys = systemInfoService.selectById(id);
+                        if (!StringUtils.isEmpty(sys.getHostname())) {
+                            hostInfoService.deleteByIp(sys.getHostname().split(","));
+                        }
+                        logInfoService.save("删除主机：" + sys.getHostname(), sys.getHostname(), StaticKeys.LOG_ERROR);
                     }
-                    logInfoService.save("删除主机：" + sys.getHostname(), sys.getHostname(), StaticKeys.LOG_ERROR);
+                    systemInfoService.deleteById(ids);
                 }
-                systemInfoService.deleteById(ids);
+            }else {
+                return "redirect:systemInfoList";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);

@@ -10,6 +10,7 @@ import net.sf.jsqlparser.statement.create.table.Index;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -92,10 +93,11 @@ public class LoginCotroller {
                     accountInfo.setAccount(DBUser.getUsername());
                     accountInfo.setId(DBUser.getUsername());
                     request.getSession().setAttribute(StaticKeys.LOGIN_KEY, accountInfo);
+                    session.setAttribute("userName", userName);
                     return "redirect:/dash/main";
                 }
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             model.addAttribute("error", "当前用户不存在！");
             return "login/login";
         } catch (Exception e) {

@@ -5,10 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.wgcloud.entity.DbInfo;
 import com.wgcloud.entity.DbTable;
 import com.wgcloud.entity.DbTableCount;
-import com.wgcloud.service.DbInfoService;
-import com.wgcloud.service.DbTableCountService;
-import com.wgcloud.service.DbTableService;
-import com.wgcloud.service.LogInfoService;
+import com.wgcloud.entity.LoginSet;
+import com.wgcloud.service.*;
 import com.wgcloud.util.PageUtil;
 import com.wgcloud.util.jdbc.RDSConnection;
 import com.wgcloud.util.staticvar.StaticKeys;
@@ -49,6 +47,8 @@ public class DbTableController {
     private DbTableCountService dbTableCountService;
     @Resource
     private LogInfoService logInfoService;
+    @Resource
+    private LoginServer loginServer;
 
 
     /**
@@ -94,23 +94,28 @@ public class DbTableController {
     @RequestMapping(value = "save")
     public String saveDbTable(DbTable DbTable, Model model, HttpServletRequest request) {
         try {
-            String whereVal = DbTable.getWhereVal().toLowerCase();
-            if (!StringUtils.isEmpty(whereVal)) {
-                String[] sqlinkeys = RDSConnection.SQL_INKEYS.split(",");
-                for (String sqlinkey : sqlinkeys) {
-                    if (whereVal.indexOf(sqlinkey) > -1) {
-                        model.addAttribute("dbTable", DbTable);
-                        List<DbInfo> dbInfoList = dbInfoService.selectAllByParams(new HashMap<>());
-                        model.addAttribute("dbInfoList", dbInfoList);
-                        model.addAttribute("msg", "where语句含有sql敏感字符" + sqlinkey + "，请检查");
-                        return "mysql/add";
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                String whereVal = DbTable.getWhereVal().toLowerCase();
+                if (!StringUtils.isEmpty(whereVal)) {
+                    String[] sqlinkeys = RDSConnection.SQL_INKEYS.split(",");
+                    for (String sqlinkey : sqlinkeys) {
+                        if (whereVal.indexOf(sqlinkey) > -1) {
+                            model.addAttribute("dbTable", DbTable);
+                            List<DbInfo> dbInfoList = dbInfoService.selectAllByParams(new HashMap<>());
+                            model.addAttribute("dbInfoList", dbInfoList);
+                            model.addAttribute("msg", "where语句含有sql敏感字符" + sqlinkey + "，请检查");
+                            return "mysql/add";
+                        }
                     }
                 }
-            }
-            if (StringUtils.isEmpty(DbTable.getId())) {
-                dbTableService.save(DbTable);
+                if (StringUtils.isEmpty(DbTable.getId())) {
+                    dbTableService.save(DbTable);
+                } else {
+                    dbTableService.updateById(DbTable);
+                }
             } else {
-                dbTableService.updateById(DbTable);
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error("保存数据表错误：", e);
@@ -131,14 +136,19 @@ public class DbTableController {
     @RequestMapping(value = "edit")
     public String editDbTable(DbTable DbTable, Model model, HttpServletRequest request) {
         try {
-            String id = request.getParameter("id");
-            DbTable dbTableInfo = new DbTable();
-            if (!StringUtils.isEmpty(id)) {
-                dbTableInfo = dbTableService.selectById(id);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                String id = request.getParameter("id");
+                DbTable dbTableInfo = new DbTable();
+                if (!StringUtils.isEmpty(id)) {
+                    dbTableInfo = dbTableService.selectById(id);
+                }
+                List<DbInfo> dbInfoList = dbInfoService.selectAllByParams(new HashMap<>());
+                model.addAttribute("dbInfoList", dbInfoList);
+                model.addAttribute("dbTable", dbTableInfo);
+            } else {
+                return "redirect:list";
             }
-            List<DbInfo> dbInfoList = dbInfoService.selectAllByParams(new HashMap<>());
-            model.addAttribute("dbInfoList", dbInfoList);
-            model.addAttribute("dbTable", dbTableInfo);
         } catch (Exception e) {
             logger.error("查看数据表错误：", e);
             logInfoService.save("查看数据表错误", e.toString(), StaticKeys.LOG_ERROR);
@@ -189,10 +199,15 @@ public class DbTableController {
     public String delete(Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         String errorMsg = "删除数据源表信息错误：";
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                DbTable dbTable = dbTableService.selectById(request.getParameter("id"));
-                logInfoService.save("删除数据表：" + dbTable.getTableName(), "删除数据表：" + dbTable.getTableName(), StaticKeys.LOG_ERROR);
-                dbTableService.deleteById(request.getParameter("id").split(","));
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    DbTable dbTable = dbTableService.selectById(request.getParameter("id"));
+                    logInfoService.save("删除数据表：" + dbTable.getTableName(), "删除数据表：" + dbTable.getTableName(), StaticKeys.LOG_ERROR);
+                    dbTableService.deleteById(request.getParameter("id").split(","));
+                }
+            }else {
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);

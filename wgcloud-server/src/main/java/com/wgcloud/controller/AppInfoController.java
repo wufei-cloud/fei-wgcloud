@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageInfo;
 import com.wgcloud.entity.AppInfo;
 import com.wgcloud.entity.AppState;
+import com.wgcloud.entity.LoginSet;
 import com.wgcloud.entity.SystemInfo;
 import com.wgcloud.service.*;
 import com.wgcloud.util.CodeUtil;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +69,9 @@ public class AppInfoController {
 
     @Autowired
     private TokenUtils tokenUtils;
+
+    @Resource
+    private LoginServer loginServer;
 
 
     /**
@@ -143,10 +148,17 @@ public class AppInfoController {
     @RequestMapping(value = "save")
     public String saveAppInfo(AppInfo AppInfo, Model model, HttpServletRequest request) {
         try {
-            if (StringUtils.isEmpty(AppInfo.getId())) {
-                appInfoService.save(AppInfo);
+
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(AppInfo.getId())) {
+                    appInfoService.save(AppInfo);
+                } else {
+                    appInfoService.updateById(AppInfo);
+                }
             } else {
-                appInfoService.updateById(AppInfo);
+//                model.addAttribute("msg", "只读用户");
+                return "redirect:/appInfo/list";
             }
         } catch (Exception e) {
             logger.error("保存进程错误：", e);
@@ -168,14 +180,19 @@ public class AppInfoController {
         String id = request.getParameter("id");
         AppInfo appInfo = new AppInfo();
         try {
-            List<SystemInfo> systemInfoList = systemInfoService.selectAllByParams(new HashMap<>());
-            model.addAttribute("systemInfoList", systemInfoList);
-            if (StringUtils.isEmpty(id)) {
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                List<SystemInfo> systemInfoList = systemInfoService.selectAllByParams(new HashMap<>());
+                model.addAttribute("systemInfoList", systemInfoList);
+                if (StringUtils.isEmpty(id)) {
+                    model.addAttribute("appInfo", appInfo);
+                    return "app/add";
+                }
+                appInfo = appInfoService.selectById(id);
                 model.addAttribute("appInfo", appInfo);
-                return "app/add";
+            } else {
+                return "redirect:/appInfo/list";
             }
-            appInfo = appInfoService.selectById(id);
-            model.addAttribute("appInfo", appInfo);
         } catch (Exception e) {
             logger.error(errorMsg, e);
             logInfoService.save(appInfo.getAppPid(), errorMsg + e.toString(), StaticKeys.LOG_ERROR);
@@ -221,7 +238,6 @@ public class AppInfoController {
     /**
      * 删除进程
      *
-     * @param id
      * @param model
      * @param request
      * @param redirectAttributes
@@ -232,10 +248,15 @@ public class AppInfoController {
         String errorMsg = "删除进程信息错误：";
         AppInfo appInfo = new AppInfo();
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                appInfo = appInfoService.selectById(request.getParameter("id"));
-                logInfoService.save("删除进程：" + appInfo.getHostname(), "删除进程：" + appInfo.getHostname() + "：" + appInfo.getAppPid(), StaticKeys.LOG_ERROR);
-                appInfoService.deleteById(request.getParameter("id").split(","));
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    appInfo = appInfoService.selectById(request.getParameter("id"));
+                    logInfoService.save("删除进程：" + appInfo.getHostname(), "删除进程：" + appInfo.getHostname() + "：" + appInfo.getAppPid(), StaticKeys.LOG_ERROR);
+                    appInfoService.deleteById(request.getParameter("id").split(","));
+                }
+            }else {
+                return "redirect:/appInfo/list";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);

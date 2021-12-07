@@ -4,9 +4,11 @@ import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageInfo;
 import com.wgcloud.dto.MessageDto;
 import com.wgcloud.entity.DbInfo;
+import com.wgcloud.entity.LoginSet;
 import com.wgcloud.service.DbInfoService;
 import com.wgcloud.service.DbTableService;
 import com.wgcloud.service.LogInfoService;
+import com.wgcloud.service.LoginServer;
 import com.wgcloud.util.PageUtil;
 import com.wgcloud.util.jdbc.ConnectionUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
@@ -23,6 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,7 +51,8 @@ public class DbInfoController {
     private LogInfoService logInfoService;
     @Resource
     private ConnectionUtil connectionUtil;
-
+    @Resource
+    private LoginServer loginServer;
 
     /**
      * 测试数据库连接
@@ -116,12 +120,17 @@ public class DbInfoController {
         String id = request.getParameter("id");
         DbInfo dbInfo = new DbInfo();
         try {
-            if (StringUtils.isEmpty(id)) {
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(id)) {
+                    model.addAttribute("dbInfo", dbInfo);
+                    return "mysql/init";
+                }
+                dbInfo = dbInfoService.selectById(id);
                 model.addAttribute("dbInfo", dbInfo);
-                return "mysql/init";
+            } else {
+                return "redirect:list";
             }
-            dbInfo = dbInfoService.selectById(id);
-            model.addAttribute("dbInfo", dbInfo);
         } catch (Exception e) {
             logger.error(errorMsg, e);
             logInfoService.save(dbInfo.getDbName(), errorMsg + e.toString(), StaticKeys.LOG_ERROR);
@@ -141,10 +150,15 @@ public class DbInfoController {
     @RequestMapping(value = "save")
     public String saveDbInfo(DbInfo DbInfo, Model model, HttpServletRequest request) {
         try {
-            if (StringUtils.isEmpty(DbInfo.getId())) {
-                dbInfoService.save(DbInfo);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(DbInfo.getId())) {
+                    dbInfoService.save(DbInfo);
+                } else {
+                    dbInfoService.updateById(DbInfo);
+                }
             } else {
-                dbInfoService.updateById(DbInfo);
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error("保存数据源错误：", e);
@@ -157,7 +171,6 @@ public class DbInfoController {
     /**
      * 删除数据源
      *
-     * @param id
      * @param model
      * @param request
      * @param redirectAttributes
@@ -168,12 +181,17 @@ public class DbInfoController {
         String errorMsg = "删除数据源信息错误：";
         DbInfo DbInfo = new DbInfo();
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                DbInfo = dbInfoService.selectById(request.getParameter("id"));
-                logInfoService.save("删除数据源：" + DbInfo.getAliasName(), "删除数据源：" + DbInfo.getIp() + "：" + DbInfo.getPort() +
-                        "，数据库别名" + DbInfo.getAliasName(), StaticKeys.LOG_ERROR);
-                dbInfoService.deleteById(request.getParameter("id").split(","));
-                dbTableService.deleteByDbInfoId(DbInfo.getId());
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    DbInfo = dbInfoService.selectById(request.getParameter("id"));
+                    logInfoService.save("删除数据源：" + DbInfo.getAliasName(), "删除数据源：" + DbInfo.getIp() + "：" + DbInfo.getPort() +
+                            "，数据库别名" + DbInfo.getAliasName(), StaticKeys.LOG_ERROR);
+                    dbInfoService.deleteById(request.getParameter("id").split(","));
+                    dbTableService.deleteByDbInfoId(DbInfo.getId());
+                }
+            } else {
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);

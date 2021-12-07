@@ -1,9 +1,6 @@
 package com.wgcloud.entity;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
 public class RegisterSet extends BaseEntity{
     private String username;
 

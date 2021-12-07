@@ -2,8 +2,10 @@ package com.wgcloud.controller;
 
 
 import com.wgcloud.entity.DingSet;
+import com.wgcloud.entity.LoginSet;
 import com.wgcloud.service.DingSetServer;
 import com.wgcloud.service.LogInfoService;
+import com.wgcloud.service.LoginServer;
 import com.wgcloud.util.staticvar.StaticKeys;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -33,6 +35,8 @@ public class DingSetController {
     private DingSetServer dingSetServer;
     @Resource
     private LogInfoService logInfoService;
+    @Resource
+    private LoginServer loginServer;
 
 
     @RequestMapping("/list")
@@ -65,12 +69,19 @@ public class DingSetController {
     @RequestMapping("save")
     public String saveDingSet(DingSet dingSet, Model model, HttpServletRequest request) {
         try {
-            if (StringUtils.isEmpty(dingSet.getId())) {
-                dingSetServer.save(dingSet);
-            } else {
-                dingSetServer.updateById(dingSet);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+
+
+                if (StringUtils.isEmpty(dingSet.getId())) {
+                    dingSetServer.save(dingSet);
+                } else {
+                    dingSetServer.updateById(dingSet);
+                }
+                StaticKeys.dingSet = dingSet;
+            }else {
+                return "redirect:list";
             }
-            StaticKeys.dingSet = dingSet;
         } catch (Exception e) {
             logger.error("保存钉钉设置信息错误：", e);
             logInfoService.save("钉钉告警信息设置失败", e.toString(), StaticKeys.LOG_ERROR);

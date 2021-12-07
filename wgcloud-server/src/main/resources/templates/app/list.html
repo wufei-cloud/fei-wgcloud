@@ -37,6 +37,7 @@
       <div class="card-header">
         <h3 class="card-title">进程列表</h3>
         <div class=" float-sm-right">
+            <p class="login-box-msg"><label style="color:red;font-weight:bold;" th:text="${msg}"></label></p>
           <!-- SEARCH FORM -->
           <form class="form-inline ml-3" th:action="@{'/appInfo/list'}">
             <div class="input-group input-group-sm">

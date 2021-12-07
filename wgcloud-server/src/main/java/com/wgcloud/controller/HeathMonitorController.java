@@ -2,8 +2,10 @@ package com.wgcloud.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.wgcloud.entity.HeathMonitor;
+import com.wgcloud.entity.LoginSet;
 import com.wgcloud.service.HeathMonitorService;
 import com.wgcloud.service.LogInfoService;
+import com.wgcloud.service.LoginServer;
 import com.wgcloud.util.PageUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
 import org.apache.commons.lang3.StringUtils;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -38,6 +41,8 @@ public class HeathMonitorController {
     private HeathMonitorService heathMonitorService;
     @Resource
     private LogInfoService logInfoService;
+    @Resource
+    private LoginServer loginServer;
 
 
     /**
@@ -75,12 +80,16 @@ public class HeathMonitorController {
     @RequestMapping(value = "save")
     public String saveHeathMonitor(HeathMonitor HeathMonitor, Model model, HttpServletRequest request) {
         try {
-            if (StringUtils.isEmpty(HeathMonitor.getId())) {
-                heathMonitorService.save(HeathMonitor);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (StringUtils.isEmpty(HeathMonitor.getId())) {
+                    heathMonitorService.save(HeathMonitor);
+                } else {
+                    heathMonitorService.updateById(HeathMonitor);
+                }
             } else {
-                heathMonitorService.updateById(HeathMonitor);
+                return "redirect:list";
             }
-
         } catch (Exception e) {
             logger.error("保存服务心跳监控错误：", e);
             logInfoService.save(HeathMonitor.getAppName(), "保存心跳监控错误：" + e.toString(), StaticKeys.LOG_ERROR);
@@ -99,20 +108,28 @@ public class HeathMonitorController {
      */
     @RequestMapping(value = "edit")
     public String edit(Model model, HttpServletRequest request) {
-        String errorMsg = "编辑服务心跳监控：";
-        String id = request.getParameter("id");
-        HeathMonitor heathMonitor = new HeathMonitor();
-        if (StringUtils.isEmpty(id)) {
-            model.addAttribute("heathMonitor", heathMonitor);
-            return "heath/add";
-        }
-
         try {
-            heathMonitor = heathMonitorService.selectById(id);
-            model.addAttribute("heathMonitor", heathMonitor);
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                String errorMsg = "编辑服务心跳监控：";
+                String id = request.getParameter("id");
+                HeathMonitor heathMonitor = new HeathMonitor();
+                if (StringUtils.isEmpty(id)) {
+                    model.addAttribute("heathMonitor", heathMonitor);
+                    return "heath/add";
+                }
+                try {
+                    heathMonitor = heathMonitorService.selectById(id);
+                    model.addAttribute("heathMonitor", heathMonitor);
+                } catch (Exception e) {
+                    logger.error(errorMsg, e);
+                    logInfoService.save(heathMonitor.getAppName(), errorMsg + e.toString(), StaticKeys.LOG_ERROR);
+                }
+            } else {
+                return "redirect:list";
+            }
         } catch (Exception e) {
-            logger.error(errorMsg, e);
-            logInfoService.save(heathMonitor.getAppName(), errorMsg + e.toString(), StaticKeys.LOG_ERROR);
+
         }
         return "heath/add";
     }
@@ -156,10 +173,15 @@ public class HeathMonitorController {
         String errorMsg = "删除服务心跳监控错误：";
         HeathMonitor HeathMonitor = new HeathMonitor();
         try {
-            if (!StringUtils.isEmpty(request.getParameter("id"))) {
-                HeathMonitor = heathMonitorService.selectById(request.getParameter("id"));
-                logInfoService.save("删除服务心跳监控：" + HeathMonitor.getAppName(), "删除服务心跳监控：" + HeathMonitor.getAppName() + "：" + HeathMonitor.getHeathUrl(), StaticKeys.LOG_ERROR);
-                heathMonitorService.deleteById(request.getParameter("id").split(","));
+            List<LoginSet> list = loginServer.selectUserPass((String) request.getSession().getAttribute("userName"));
+            if (list.get(0).getReghts_id().equals("0")) {
+                if (!StringUtils.isEmpty(request.getParameter("id"))) {
+                    HeathMonitor = heathMonitorService.selectById(request.getParameter("id"));
+                    logInfoService.save("删除服务心跳监控：" + HeathMonitor.getAppName(), "删除服务心跳监控：" + HeathMonitor.getAppName() + "：" + HeathMonitor.getHeathUrl(), StaticKeys.LOG_ERROR);
+                    heathMonitorService.deleteById(request.getParameter("id").split(","));
+                }
+            }else {
+                return "redirect:list";
             }
         } catch (Exception e) {
             logger.error(errorMsg, e);
