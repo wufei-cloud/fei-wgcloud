@@ -4,6 +4,7 @@ import com.wgcloud.config.CommonConfig;
 import com.wgcloud.entity.AccountInfo;
 import com.wgcloud.entity.LoginSet;
 import com.wgcloud.service.LoginServer;
+import com.wgcloud.util.passwdMD5.MD5PassWd;
 import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.StaticKeys;
 import net.sf.jsqlparser.statement.create.table.Index;
@@ -89,7 +90,7 @@ public class LoginCotroller {
                     return "login/login";
                 }
                 AccountInfo accountInfo = new AccountInfo();
-                if (MD5.GetMD5Code(DBUser.getPassword().trim()).equals(passwd) && (DBUser.getUsername().trim()).equals(userName)) {
+                if (MD5PassWd.md5MinusSalt(DBUser.getPassword().trim()).equals(passwd) && (DBUser.getUsername().trim()).equals(userName)) {
                     accountInfo.setAccount(DBUser.getUsername());
                     accountInfo.setId(DBUser.getUsername());
                     request.getSession().setAttribute(StaticKeys.LOGIN_KEY, accountInfo);

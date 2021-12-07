@@ -3,6 +3,7 @@ package com.wgcloud.controller;
 import com.wgcloud.entity.LoginSet;
 import com.wgcloud.entity.RegisterSet;
 import com.wgcloud.service.RegisterServer;
+import com.wgcloud.util.passwdMD5.MD5PassWd;
 import com.wgcloud.util.shorturl.MD5;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -46,12 +47,12 @@ public class RegisterController {
                     if (MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token0)) || MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token1))) {
                         if (MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token0))) {
                             registerSet.setUsername(username);
-                            registerSet.setPassword(Passwd);
+                            registerSet.setPassword(MD5PassWd.md5PlusSalt(Passwd));
                             registerSet.setReghts_id("0");
                             registerServer.save(registerSet);
                         }else if(MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token1))){
                             registerSet.setUsername(username);
-                            registerSet.setPassword(Passwd);
+                            registerSet.setPassword(MD5PassWd.md5PlusSalt(Passwd));
                             registerServer.save(registerSet);
                         }
                     } else {
