@@ -19,7 +19,7 @@
             <if test="id != null">ID,</if>
             <if test="username != null">USERNAME,</if>
             <if test="password != null">PASSWD,</if>
-         <!--   <if test="reghts_id != null">REGHTS</if>-->
+           <if test="reghts_id != null">REGHTS</if>
     </trim>
      <trim prefix="values (" suffix=")" suffixOverrides=",">
          <if test="id != null">#{id},</if>

@@ -32,9 +32,9 @@ public class RegisterController {
         String Passwd = request.getParameter("Passwd");
         String PasswdAgain = request.getParameter("PasswdAgain");
         String Token = request.getParameter("Token");
-        String token = "2c760240585a429697845f00c7704cad";
+        String token0 = "2c760240585a429697845f00c7704cad";
+        String token1 = "91087cefa9644b5cb986de9a3ab72060";
         List<RegisterSet> list = registerServer.selectUserPass(username);
-        System.out.println(Token);
         if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(Passwd) && !StringUtils.isEmpty(PasswdAgain) && !StringUtils.isEmpty(Token)) {
             try {
                 if (list.get(0) != null) {
@@ -42,13 +42,20 @@ public class RegisterController {
                     return "register/register";
                 }
             } catch (IndexOutOfBoundsException e) {
-                if (MD5.GetMD5Code(Passwd).equals(MD5.GetMD5Code(PasswdAgain))) {
-                    if (MD5.GetMD5Code(Token).equals(MD5.GetMD5Code(token))) {
-                        registerSet.setUsername(username);
-                        registerSet.setPassword(Passwd);
-                        registerServer.save(registerSet);
+                if (MD5.GetMD5Code(Passwd.trim()).equals(MD5.GetMD5Code(PasswdAgain.trim()))) {
+                    if (MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token0)) || MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token1))) {
+                        if (MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token0))) {
+                            registerSet.setUsername(username);
+                            registerSet.setPassword(Passwd);
+                            registerSet.setReghts_id("0");
+                            registerServer.save(registerSet);
+                        }else if(MD5.GetMD5Code(Token.trim()).equals(MD5.GetMD5Code(token1))){
+                            registerSet.setUsername(username);
+                            registerSet.setPassword(Passwd);
+                            registerServer.save(registerSet);
+                        }
                     } else {
-                        model.addAttribute("error", "输入的凭证不正确！");
+                        model.addAttribute("error", "请联系管理员索要正确的凭证！");
                         return "register/register";
                     }
                 } else {
