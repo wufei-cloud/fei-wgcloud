@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -76,6 +78,8 @@ public class LoginCotroller {
      */
     @RequestMapping(value = "login")
     public String login(Model model, HttpServletRequest request) throws Exception {
+        Date now=new Date();
+        SimpleDateFormat sdf=new SimpleDateFormat("YYY-MM-dd HH:mm:ss");//格式化时间显示
         String userName = request.getParameter("userName").trim();
         String passwd = request.getParameter("md5pwd").trim();
         String code = request.getParameter(StaticKeys.SESSION_CODE);
@@ -95,6 +99,7 @@ public class LoginCotroller {
                     accountInfo.setId(DBUser.getUsername());
                     request.getSession().setAttribute(StaticKeys.LOGIN_KEY, accountInfo);
                     session.setAttribute("userName", userName);
+                    logger.info("用户 "+userName+" 在 "+sdf.format(now)+" 登录成功，登录的IP是: "+request.getHeader("x-forwarded-for"));
                     return "redirect:/dash/main";
                 }
             }
@@ -105,6 +110,7 @@ public class LoginCotroller {
             logger.error("登录异常：", e);
         }
         model.addAttribute("error", "帐号或者密码错误");
+        logger.warn(request.getHeader("x-forwarded-for")+" 在 "+sdf.format(now)+" 使用用户 "+userName+" 尝试登录失败！！！");
         return "login/login";
     }
 
