@@ -6,6 +6,7 @@ import com.wgcloud.entity.LoginSet;
 import com.wgcloud.service.LoginServer;
 import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.StaticKeys;
+import net.sf.jsqlparser.statement.create.table.Index;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,8 +80,8 @@ public class LoginCotroller {
 
         HttpSession session = request.getSession();
         List<LoginSet> list = loginServer.selectUserPass(userName);
-        LoginSet DBUser = list.get(0);
         try {
+            LoginSet DBUser = list.get(0);
             if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(passwd) && !StringUtils.isEmpty(code)) {
                 if (!code.equals(session.getAttribute(StaticKeys.SESSION_CODE))) {
                     model.addAttribute("error", "验证码错误");
@@ -94,6 +95,9 @@ public class LoginCotroller {
                     return "redirect:/dash/main";
                 }
             }
+        }catch (IndexOutOfBoundsException e){
+            model.addAttribute("error", "当前用户不存在！");
+            return "login/login";
         } catch (Exception e) {
             logger.error("登录异常：", e);
         }
