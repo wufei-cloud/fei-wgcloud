@@ -9,6 +9,7 @@ import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.StaticKeys;
 import net.sf.jsqlparser.statement.create.table.Index;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.jdbc.Null;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,8 +79,8 @@ public class LoginCotroller {
      */
     @RequestMapping(value = "login")
     public String login(Model model, HttpServletRequest request) throws Exception {
-        Date now=new Date();
-        SimpleDateFormat sdf=new SimpleDateFormat("YYY-MM-dd HH:mm:ss");//格式化时间显示
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("YYY-MM-dd HH:mm:ss");//格式化时间显示
         String userName = request.getParameter("userName").trim();
         String passwd = request.getParameter("md5pwd").trim();
         String code = request.getParameter(StaticKeys.SESSION_CODE);
@@ -99,7 +100,11 @@ public class LoginCotroller {
                     accountInfo.setId(DBUser.getUsername());
                     request.getSession().setAttribute(StaticKeys.LOGIN_KEY, accountInfo);
                     session.setAttribute("userName", userName);
-                    logger.info("用户 "+userName+" 在 "+sdf.format(now)+" 登录成功，登录的IP是: "+request.getHeader("x-forwarded-for"));
+                    if (request.getHeader("x-forwarded-for") != null) {
+                        logger.info("用户 " + userName + " 在 " + sdf.format(now) + " 登录成功，登录的IP是: " + request.getHeader("x-forwarded-for"));
+                    } else {
+                        logger.info("用户 " + userName + " 在 " + sdf.format(now) + " 登录成功，登录的IP是: " + request.getRemoteAddr());
+                    }
                     return "redirect:/dash/main";
                 }
             }
@@ -110,7 +115,11 @@ public class LoginCotroller {
             logger.error("登录异常：", e);
         }
         model.addAttribute("error", "帐号或者密码错误");
-        logger.warn(request.getHeader("x-forwarded-for")+" 在 "+sdf.format(now)+" 使用用户 "+userName+" 尝试登录失败！！！");
+        if (request.getHeader("x-forwarded-for") != null) {
+            logger.warn(request.getHeader("x-forwarded-for") + " 在 " + sdf.format(now) + " 使用用户 " + userName + " 尝试登录失败！！！");
+        } else {
+            logger.warn(request.getRemoteAddr() + " 在 " + sdf.format(now) + " 使用用户 " + userName + " 尝试登录失败！！！");
+        }
         return "login/login";
     }
 
