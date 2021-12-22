@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wgcloud.mapper.LoginMapper">
+    <resultMap id="resultMap" type="com.wgcloud.entity.LoginSet">
+        <id column="ID" property="id" jdbcType="CHAR"/>
+        <result column="USERNAME" property="username" jdbcType="CHAR"/>
+        <result column="PASSWD" property="password" jdbcType="CHAR"/>
+        <result column="REGHTS" property="reghts_id" jdbcType="CHAR"/>
+    </resultMap>
+
+    <sql id="UserTables">
+        ID
+        ,USERNAME,PASSWD,REGHTS
+    </sql>
+
+
+ <select id="selectUserPass" parameterType="map" resultMap="resultMap">
+     SELECT
+     <include refid="UserTables"/>
+     FROM USER_TABLES t
+     WHERE USERNAME=#{username}
+ </select>
+
+</mapper>
