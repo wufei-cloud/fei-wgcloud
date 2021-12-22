@@ -4,6 +4,7 @@ import com.wgcloud.common.ApplicationContextHelper;
 import com.wgcloud.entity.*;
 import com.wgcloud.service.DingSetServer;
 import com.wgcloud.service.LogInfoService;
+import com.wgcloud.util.FormatUtil;
 import com.wgcloud.util.RestUtil;
 import com.wgcloud.util.staticvar.StaticKeys;
 import org.apache.commons.lang3.StringUtils;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,13 +60,14 @@ public class WarnDingTalk {
      */
     public static boolean sendCpuWarnInfo(CpuState cpuState) {
         if (cpuState.getSys() != null && cpuState.getSys() >= 70) {
+            SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             if (cpuState.getSys() >= 90) {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n "+ getPhone()
-                            +"发生的机器是:" +
-                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
-                            "http://192.168.75.135:9999/wgcloud/log/list");
+                    String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n " + getPhone()
+                            + "发生的机器是:" +
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys()+" %"
+                            +"\n\n 事件发生的时间:"+date.format(cpuState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -74,10 +77,10 @@ public class WarnDingTalk {
             } else {
                 try {
                     String title = ("CPU告警");
-                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n "+ getPhone()
-                            +" 发生的机器是:" +
-                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + "\n\n点击查看" +
-                            "http://192.168.75.135:9999/wgcloud/log/list");
+                    String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n " + getPhone()
+                            + " 发生的机器是:" +
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys()+" %"
+                            +"\n\n 事件发生的时间:"+date.format(cpuState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -97,13 +100,14 @@ public class WarnDingTalk {
      */
     public static boolean sendMemWarnInfo(MemState memState) {
         if (memState.getUsePer() != null && memState.getUsePer() >= 70) {
+            SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             if (memState.getUsePer() >= 90) {
                 try {
                     String title = ("内存告警");
                     String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n " + getPhone()
                             + "\n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
-                            + memState.getUsePer() + "\n\n请尽快点击查看" +
-                            "http://192.168.75.135:9999/wgcloud/log/list");
+                            + memState.getUsePer()+" %"
+                            +"\n\n 事件发生的时间:"+date.format(memState.getCreateTime()));
                     sendDing(title, text);
 
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
@@ -115,8 +119,8 @@ public class WarnDingTalk {
                 try {
                     String title = ("内存告警");
                     String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n " + getPhone() + " 发生的机器是:"
-                            + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() +
-                            "\n\n点击查看" + "http://192.168.75.135:9999/wgcloud/log/list");
+                            + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer()+" %"
+                            +"\n\n 事件发生的时间:"+date.format(memState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -144,8 +148,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = ("主机下线告警 " + systemInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n "+ getPhone()
-                        +" \n\n " +
+                String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n " + getPhone()
+                        + " \n\n " +
                         "主机超过十分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。 \n\n 如果不在监控该主机，请从主机列表移除同时不在接收该主机告警");
                 sendDing(title, text);
@@ -187,8 +191,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = ("进程下线告警 " + appInfo.getHostname());
-                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** "+ getPhone()
-                        +" \n\n" +
+                String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** " + getPhone()
+                        + " \n\n" +
                         " 进程超过十分钟未上报数据，可能已经下线 " + appInfo.getHostname() + "\n\n "
                         + appInfo.getAppName() + "。 \n\n 如果不在监控该进程，请从进程列表移除同时不在接收该进程告警");
                 sendDing(title, text);
@@ -223,8 +227,8 @@ public class WarnDingTalk {
             }
             try {
                 String title = "服务接口检测告警：" + heathMonitor.getAppName();
-                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n "+ getPhone()
-                        +" 服务接口："
+                String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n " + getPhone()
+                        + " 服务接口："
                         + heathMonitor.getHeathUrl() + "\n\n 响应状态码为" + heathMonitor.getHeathStatus()
                         + "  可能存在异常，请查看";
                 //发送钉钉告警
@@ -250,6 +254,48 @@ public class WarnDingTalk {
             } catch (Exception e) {
                 logger.error("发送服务接口恢复正常通知信息失败：", e);
                 logInfoService.save("发送服务接口恢复正常通知信息错误", e.toString(), StaticKeys.LOG_ERROR);
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 网卡流量监测
+     */
+    public static boolean netMonitor(NetIoState netIoState) {
+        System.out.println("1");
+        if (netIoState.getRxbyt() != null && Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024 >= 0.0) {
+            SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            if (Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024 >= 2.0) {
+                try {
+                    String title = ("网卡告警");
+                    String text = ("**<font color=#FF0000 size=6>网卡告警 Q1 </font>** \n\n " + getPhone()
+                            + "\n\n发生的机器是:" + netIoState.getHostname() + " \n\n " + "当前网络流量为:"
+                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt())
+                            / 1024 / 1024, 2)+" MB/s"
+                            +"\n\n 事件发生的时间:"+date.format(netIoState.getCreateTime()));
+                    sendDing(title, text);
+
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送网卡告警信息失败：", e);
+                    logInfoService.save("发送网卡告警失败", e.toString(), StaticKeys.LOG_ERROR);
+                }
+            } else {
+                try {
+                    String title = ("网卡告警");
+                    String text = ("**<font color=#750000 size=4>网卡告警 Q2 </font>** \n\n " + getPhone()
+                            + "\n\n发生的机器是:" + netIoState.getHostname() + " \n\n " + "当前网络流量为:"
+                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt())
+                            / 1024 / 1024, 2)+" MB/s"
+                            +"\n\n 事件发生的时间:"+date.format(netIoState.getCreateTime()));
+                    sendDing(title, text);
+
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送网卡告警信息失败：", e);
+                    logInfoService.save("发送网卡告警失败", e.toString(), StaticKeys.LOG_ERROR);
+                }
             }
         }
         return false;
@@ -296,7 +342,8 @@ public class WarnDingTalk {
 
     //    钉钉告警@人
     public static String getPhone() {
-        StringBuilder stringBuilder = new StringBuilder();;
+        StringBuilder stringBuilder = new StringBuilder();
+        ;
         stringBuilder.append(Phone.replace(";", "\t\t@"));
         stringBuilder.insert(0, "@");
         return stringBuilder.toString();

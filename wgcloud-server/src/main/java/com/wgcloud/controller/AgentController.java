@@ -4,11 +4,14 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.wgcloud.config.CommonConfig;
 import com.wgcloud.entity.*;
 import com.wgcloud.service.LogInfoService;
 import com.wgcloud.service.SystemInfoService;
+import com.wgcloud.util.MD5Utils;
 import com.wgcloud.util.TokenUtils;
 import com.wgcloud.util.msg.WarnDingTalk;
+import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.BatchData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,26 +51,35 @@ public class AgentController {
     private SystemInfoService systemInfoService;
     @Autowired
     private TokenUtils tokenUtils;
+    @Autowired
+    private CommonConfig commonConfig;
 
     @ResponseBody
     @RequestMapping("/minTask")
-    public JSONObject minTask(@RequestBody String paramBean)  {
+    public JSONObject minTask(@RequestBody String paramBean) {
         JSONObject agentJsonObject = (JSONObject) JSONUtil.parse(paramBean);
         JSONObject resultJson = new JSONObject();
-        if (!tokenUtils.checkAgentToken(agentJsonObject)) {
+//go 客户端验证 wgToken
+        if (!MD5Utils.GetMD5Code(agentJsonObject.getStr("wgToken")).equals(MD5Utils.GetMD5Code(commonConfig.getWgToken()))) {
             logger.error("token is invalidate");
             resultJson.put("result", "error：token is invalidate");
             return resultJson;
         }
+//        java 客户端验证 wgToken
+//        if (!tokenUtils.checkAgentToken(agentJsonObject)) {
+//            logger.error("token is invalidate111");
+//            resultJson.put("result", "error：token is invalidate");
+//            return resultJson;
+//        }
         JSONObject cpuState = agentJsonObject.getJSONObject("cpuState");
         JSONObject memState = agentJsonObject.getJSONObject("memState");
         JSONObject sysLoadState = agentJsonObject.getJSONObject("sysLoadState");
-        JSONArray appInfoList = agentJsonObject.getJSONArray("appInfoList");
-        JSONArray appStateList = agentJsonObject.getJSONArray("appStateList");
-        JSONObject logInfo = agentJsonObject.getJSONObject("logInfo");
+        JSONArray appInfoList = agentJsonObject.getJSONArray("appInfoList");   // 目前没有使用
+        JSONArray appStateList = agentJsonObject.getJSONArray("appStateList"); // 目前没有使用
+        JSONObject logInfo = agentJsonObject.getJSONObject("logInfo"); // 目前没有使用
         JSONObject systemInfo = agentJsonObject.getJSONObject("systemInfo");
         JSONObject netIoState = agentJsonObject.getJSONObject("netIoState");
-        JSONArray deskStateList = agentJsonObject.getJSONArray("deskStateList");
+        JSONArray deskStateList = agentJsonObject.getJSONArray("diskStateList");
 
         try {
 
@@ -106,6 +118,10 @@ public class AgentController {
                 NetIoState bean = new NetIoState();
                 BeanUtil.copyProperties(netIoState, bean);
                 BatchData.NETIO_STATE_LIST.add(bean);
+                Runnable runnable = () -> {
+                  WarnDingTalk.netMonitor(bean);
+                };
+                executor.execute(runnable);
             }
             if (appInfoList != null && appStateList != null) {
                 List<AppInfo> appInfoResList = JSONUtil.toList(appInfoList, AppInfo.class);
