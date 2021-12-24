@@ -11,7 +11,6 @@ import com.wgcloud.service.SystemInfoService;
 import com.wgcloud.util.MD5Utils;
 import com.wgcloud.util.TokenUtils;
 import com.wgcloud.util.msg.WarnDingTalk;
-import com.wgcloud.util.shorturl.MD5;
 import com.wgcloud.util.staticvar.BatchData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.mail.search.IntegerComparisonTerm;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -119,7 +120,7 @@ public class AgentController {
                 BeanUtil.copyProperties(netIoState, bean);
                 BatchData.NETIO_STATE_LIST.add(bean);
                 Runnable runnable = () -> {
-                  WarnDingTalk.netMonitor(bean);
+                    WarnDingTalk.sendNetInfo(bean);
                 };
                 executor.execute(runnable);
             }
@@ -144,6 +145,10 @@ public class AgentController {
                     BeanUtil.copyProperties(jsonObjects, bean);
                     BatchData.DESK_STATE_LIST.add(bean);
                 }
+                Runnable runnable = () -> {
+                    WarnDingTalk.sendDiskinfo(deskStateList);
+                };
+                executor.execute(runnable);
             }
             resultJson.put("result", "success");
         } catch (Exception e) {

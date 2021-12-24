@@ -1,5 +1,7 @@
 package com.wgcloud.util.msg;
 
+import cn.hutool.json.JSONArray;
+import cn.hutool.json.JSONObject;
 import com.wgcloud.common.ApplicationContextHelper;
 import com.wgcloud.entity.*;
 import com.wgcloud.service.DingSetServer;
@@ -17,18 +19,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static com.wgcloud.util.staticvar.StaticKeys.dingSet;
 
 @Controller
 public class WarnDingTalk {
@@ -66,8 +66,8 @@ public class WarnDingTalk {
                     String title = ("CPU告警");
                     String text = ("**<font color=#FF0000 size=6>CPU告警 Q1 </font>** \n\n " + getPhone()
                             + "发生的机器是:" +
-                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys()+" %"
-                            +"\n\n 事件发生的时间:"+date.format(cpuState.getCreateTime()));
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + " %"
+                            + "\n\n 事件发生的时间:" + date.format(cpuState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -79,8 +79,8 @@ public class WarnDingTalk {
                     String title = ("CPU告警");
                     String text = ("**<font color=#750000 size=4>CPU告警 Q2 </font>** \n\n " + getPhone()
                             + " 发生的机器是:" +
-                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys()+" %"
-                            +"\n\n 事件发生的时间:"+date.format(cpuState.getCreateTime()));
+                            cpuState.getHostname() + "\n\n" + "当前CPU使用率为：" + cpuState.getSys() + " %"
+                            + "\n\n 事件发生的时间:" + date.format(cpuState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -106,8 +106,8 @@ public class WarnDingTalk {
                     String title = ("内存告警");
                     String text = ("**<font color=#FF0000 size=6>内存告警 Q1 </font>** \n\n " + getPhone()
                             + "\n\n发生的机器是:" + memState.getHostname() + " \n\n " + "当前内存使用率为:"
-                            + memState.getUsePer()+" %"
-                            +"\n\n 事件发生的时间:"+date.format(memState.getCreateTime()));
+                            + memState.getUsePer() + " %"
+                            + "\n\n 事件发生的时间:" + date.format(memState.getCreateTime()));
                     sendDing(title, text);
 
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
@@ -119,8 +119,8 @@ public class WarnDingTalk {
                 try {
                     String title = ("内存告警");
                     String text = ("**<font color=#750000 size=4>内存告警 Q2 </font>** \n\n " + getPhone() + " 发生的机器是:"
-                            + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer()+" %"
-                            +"\n\n 事件发生的时间:"+date.format(memState.getCreateTime()));
+                            + memState.getHostname() + " \n\n " + "当前内存使用率为：" + memState.getUsePer() + " %"
+                            + "\n\n 事件发生的时间:" + date.format(memState.getCreateTime()));
                     sendDing(title, text);
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
@@ -262,18 +262,18 @@ public class WarnDingTalk {
     /**
      * 网卡流量监测
      */
-    public static boolean netMonitor(NetIoState netIoState) {
-        System.out.println("1");
-        if (netIoState.getRxbyt() != null && Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024 >= 0.0) {
+    public static boolean sendNetInfo(NetIoState netIoState) {
+        if (netIoState.getRxbyt() != null && FormatUtil.formatDouble((Double.parseDouble(netIoState.getRxbyt())
+                / 1024 / 1024) / netIoState.getNetSpeed() * 100,2) >= 75.0) {
             SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            if (Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024 >= 2.0) {
+            if (Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024 >= 90.0) {
                 try {
                     String title = ("网卡告警");
                     String text = ("**<font color=#FF0000 size=6>网卡告警 Q1 </font>** \n\n " + getPhone()
                             + "\n\n发生的机器是:" + netIoState.getHostname() + " \n\n " + "当前网络流量为:"
-                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt())
-                            / 1024 / 1024, 2)+" MB/s"
-                            +"\n\n 事件发生的时间:"+date.format(netIoState.getCreateTime()));
+                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024,
+                            2) + " MB/s"
+                            + "\n\n 事件发生的时间:" + date.format(netIoState.getCreateTime()));
                     sendDing(title, text);
 
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
@@ -286,15 +286,67 @@ public class WarnDingTalk {
                     String title = ("网卡告警");
                     String text = ("**<font color=#750000 size=4>网卡告警 Q2 </font>** \n\n " + getPhone()
                             + "\n\n发生的机器是:" + netIoState.getHostname() + " \n\n " + "当前网络流量为:"
-                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt())
-                            / 1024 / 1024, 2)+" MB/s"
-                            +"\n\n 事件发生的时间:"+date.format(netIoState.getCreateTime()));
+                            + FormatUtil.formatDouble(Double.parseDouble(netIoState.getRxbyt()) / 1024 / 1024
+                            , 2) + " MB/s"
+                            + "\n\n 事件发生的时间:" + date.format(netIoState.getCreateTime()));
                     sendDing(title, text);
 
                     logInfoService.save(title, text, StaticKeys.LOG_ERROR);
                 } catch (Exception e) {
                     logger.error("发送网卡告警信息失败：", e);
                     logInfoService.save("发送网卡告警失败", e.toString(), StaticKeys.LOG_ERROR);
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 磁盘告警
+     *
+     * @param diskState
+     * @return
+     */
+    public static boolean sendDiskinfo(JSONArray diskState) {
+        /*
+        获取到DISK使用总量并转换成number类型进行运算操作
+         */
+        Number DISKPer = 0;
+        if (diskState != null) {
+            NumberFormat numberFormat = NumberFormat.getPercentInstance();
+            try {
+                DISKPer = numberFormat.parse((String) ((JSONObject) diskState.get(0)).get("usePer"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if ((double) DISKPer != 0 && (double) DISKPer >= 0.75) {
+            SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            if ((double) DISKPer >= 0.9) {
+                try {
+                    String title = ("磁盘告警");
+                    String text = ("**<font color=#FF0000 size=6>磁盘告警 Q1 </font>** \n\n " + getPhone()
+                            + "\n\n发生的机器是:" + ((JSONObject) diskState.get(0)).get("hostname") + " \n\n " + "当前磁盘容量为:"
+                            + (double) DISKPer * 100 + "%"
+                            + "\n\n 事件发生的时间:" + ((JSONObject) diskState.get(0)).get("createTime"));
+                    sendDing(title, text);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送磁盘告警信息失败：", e);
+                    logInfoService.save("发送磁盘告警失败", e.toString(), StaticKeys.LOG_ERROR);
+                }
+            } else {
+                try {
+                    String title = ("磁盘告警");
+                    String text = ("**<font color=#750000 size=6>磁盘告警 Q2 </font>** \n\n " + getPhone()
+                            + "\n\n发生的机器是:" + ((JSONObject) diskState.get(0)).get("hostname") + " \n\n " + "当前磁盘容量为:"
+                            + (double) DISKPer * 100 + "%"
+                            + "\n\n 事件发生的时间:" + ((JSONObject) diskState.get(0)).get("createTime"));
+                    sendDing(title, text);
+                    logInfoService.save(title, text, StaticKeys.LOG_ERROR);
+                } catch (Exception e) {
+                    logger.error("发送磁盘告警信息失败：", e);
+                    logInfoService.save("发送磁盘告警失败", e.toString(), StaticKeys.LOG_ERROR);
                 }
             }
         }

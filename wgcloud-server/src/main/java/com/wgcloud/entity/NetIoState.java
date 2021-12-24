@@ -60,6 +60,11 @@ public class NetIoState extends BaseEntity {
      */
     private String txcmp;
 
+    /**
+     * 获取网卡速率
+     */
+    private int netSpeed;
+
 
     /**
      * 每秒钟接收的多播数据包,rxmcst/s
@@ -162,5 +167,11 @@ public class NetIoState extends BaseEntity {
         this.hostname = hostname;
     }
 
+    public int getNetSpeed() {
+        return netSpeed;
+    }
 
+    public void setNetSpeed(int netSpeed) {
+        this.netSpeed = netSpeed;
+    }
 }
