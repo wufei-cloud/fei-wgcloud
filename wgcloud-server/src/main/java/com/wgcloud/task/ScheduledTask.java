@@ -109,10 +109,10 @@ public class ScheduledTask {
      * 300秒后执行
      * 检测主机是否已经下线，检测进程是否下线
      */
-    @Scheduled(initialDelay = 300000L, fixedRate = 20 * 60 * 1000)
+    @Scheduled(initialDelay = 300000L, fixedRate = 2 * 80 * 1000)
     public void hostDownCheckTask() {
         Date date = DateUtil.getNowTime();
-        long delayTime = 900 * 1000;
+        long delayTime = 130 * 1000;
 
         try {
             Map<String, Object> params = new HashMap<String, Object>();
@@ -131,7 +131,7 @@ public class ScheduledTask {
                         systemInfo.setState(StaticKeys.DOWN_STATE);
                         LogInfo logInfo = new LogInfo();
                         logInfo.setHostname("主机下线：" + systemInfo.getHostname());
-                        logInfo.setInfoContent("超过10分钟未上报状态，可能已下线：" + systemInfo.getHostname());
+                        logInfo.setInfoContent("超过2分钟未上报状态，可能已下线：" + systemInfo.getHostname());
                         logInfo.setState(StaticKeys.LOG_ERROR);
                         logInfoList.add(logInfo);
                         updateList.add(systemInfo);

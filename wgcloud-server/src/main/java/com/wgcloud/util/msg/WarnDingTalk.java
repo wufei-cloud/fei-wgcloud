@@ -150,7 +150,7 @@ public class WarnDingTalk {
                 String title = ("主机下线告警 " + systemInfo.getHostname());
                 String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n " + getPhone()
                         + " \n\n " +
-                        "主机超过十分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
+                        "主机超过2分钟未上报数据，可能已经下线 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。 \n\n 如果不在监控该主机，请从主机列表移除同时不在接收该主机告警");
                 sendDing(title, text);
                 WarnPools.MEM_WARN_MAP.put(key, "1");
@@ -166,7 +166,7 @@ public class WarnDingTalk {
                 String text = ("主机上线恢复 " + systemInfo.getHostname() + "\n\n 主机备注: "
                         + systemInfo.getHostRemark() + "。");
                 sendDing(title, text);
-                WarnPools.MEM_WARN_MAP.put(key, "1");
+//                WarnPools.MEM_WARN_MAP.put(key, "1");
                 logInfoService.save(title, text, StaticKeys.LOG_ERROR);
             } catch (Exception e) {
                 logger.error("主机上线恢复信息发送失败", e);
