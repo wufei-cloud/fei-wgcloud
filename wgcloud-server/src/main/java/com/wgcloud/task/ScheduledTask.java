@@ -125,9 +125,10 @@ public class ScheduledTask {
                     Date createTime = systemInfo.getCreateTime();
                     long diff = date.getTime() - createTime.getTime();
                     if (diff > delayTime) {
-                        if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(systemInfo.getId()))) {
-                            continue;
-                        }
+//                        if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(systemInfo.getId()))) {    //如果上次发送成功本次则不继续发送
+//                            System.out.println("if else");
+//                            continue;
+//                        }
                         systemInfo.setState(StaticKeys.DOWN_STATE);
                         LogInfo logInfo = new LogInfo();
                         logInfo.setHostname("主机下线：" + systemInfo.getHostname());
@@ -135,11 +136,13 @@ public class ScheduledTask {
                         logInfo.setState(StaticKeys.LOG_ERROR);
                         logInfoList.add(logInfo);
                         updateList.add(systemInfo);
+                        System.out.println("准备发送钉钉");
                         Runnable runnable = () -> {
 //                            WarnMailUtil.sendHostDown(systemInfo, true);
                             WarnDingTalk.sendHostDown(systemInfo,true);
                         };
                         executor.execute(runnable);
+                        System.out.println("钉钉发送完毕");
                     } else {
                         if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(systemInfo.getId()))) {
                             Runnable runnable = () -> {
@@ -292,8 +295,10 @@ public class ScheduledTask {
                     }
                     if ("postgresql".equals(dbInfo.getDbType())) {
                         sql = RDSConnection.query_table_count_pg.replace("{tableName}", dbTable.getTableName()) + whereAnd + dbTable.getWhereVal();
+                        System.out.println("if:  "+RDSConnection.query_table_count_pg.replace("{tableName}", dbTable.getTableName()) + whereAnd + dbTable.getWhereVal());
                     } else {
                         sql = RDSConnection.query_table_count.replace("{tableName}", dbTable.getTableName()) + whereAnd + dbTable.getWhereVal();
+                        System.out.println("ELSE  :" + RDSConnection.query_table_count.replace("{tableName}", dbTable.getTableName()) + whereAnd + dbTable.getWhereVal());
                     }
                     tableCount = connectionUtil.queryTableCount(dbInfo, sql);
                     DbTableCount dbTableCount = new DbTableCount();
