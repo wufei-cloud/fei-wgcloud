@@ -1,0 +1,1713 @@
+2022-03-02 14:56:14.285 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 31450 (/home/wufei/IdeaProjects/wgcloud/wgcloud-server/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-server)
+2022-03-02 14:56:14.297 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2022-03-02 14:56:14.455 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-02 14:56:14.455 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-02 14:56:18.546 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2022-03-02 14:56:18.590 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-02 14:56:18.591 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2022-03-02 14:56:18.603 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2022-03-02 14:56:18.648 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring embedded WebApplicationContext
+2022-03-02 14:56:18.648 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4193 ms
+2022-03-02 14:56:19.559 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-03-02 14:56:19.771 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-03-02 14:56:19.913 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-02 14:56:20.031 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-03-02 14:56:20.211 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-02 14:56:20.268 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/wgcloud'
+2022-03-02 14:56:20.279 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 6.639 seconds (JVM running for 7.515)
+2022-03-02 14:56:24.054 [http-nio-9999-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-02 14:56:24.054 [http-nio-9999-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-02 14:56:24.063 [http-nio-9999-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2022-03-02 14:56:33.498 [http-nio-9999-exec-4] INFO  com.wgcloud.controller.LoginCotroller - 用户 wufei 在 2022-03-02 14:56:33 登录成功，登录的IP是: 192.168.75.1
+2022-03-02 14:56:36.064 [http-nio-9999-exec-2] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9999-exec-2] Exception processing template "sendcmd/view": An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 55 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 57 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 76 common frames omitted
+2022-03-02 14:56:36.067 [http-nio-9999-exec-2] ERROR o.a.c.c.C.[.[.[/wgcloud].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/wgcloud] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 14:56:36.080 [http-nio-9999-exec-2] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/wgcloud/command/list] and exception [An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
+2022-03-02 14:56:50.241 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 14:56:50
+2022-03-02 14:56:50.242 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 14:56:50
+2022-03-02 14:57:50.240 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 14:57:50
+2022-03-02 14:57:50.240 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 14:57:50
+2022-03-02 14:57:50.248 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 14:57:50
+2022-03-02 14:58:50.241 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 14:58:50
+2022-03-02 14:58:50.241 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 14:58:50
+2022-03-02 14:59:50.240 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 14:59:50
+2022-03-02 14:59:50.240 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 14:59:50
+2022-03-02 15:00:50.240 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:00:50
+2022-03-02 15:00:50.241 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:00:50
+2022-03-02 15:01:50.241 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:01:50
+2022-03-02 15:01:50.241 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:01:50
+2022-03-02 15:02:50.240 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:02:50
+2022-03-02 15:02:50.241 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:02:50
+2022-03-02 15:03:50.240 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:03:50
+2022-03-02 15:03:50.240 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:03:50
+2022-03-02 15:04:50.241 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:04:50
+2022-03-02 15:04:50.241 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:04:50
+2022-03-02 15:05:50.242 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:05:50
+2022-03-02 15:05:50.242 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:05:50
+2022-03-02 15:06:50.241 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:06:50
+2022-03-02 15:06:50.241 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:06:50
+2022-03-02 15:07:50.239 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:07:50
+2022-03-02 15:07:50.240 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:07:50
+2022-03-02 15:07:50.240 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:07:50
+2022-03-02 15:08:50.241 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:08:50
+2022-03-02 15:08:50.241 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:08:50
+2022-03-02 15:09:50.240 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:09:50
+2022-03-02 15:09:50.241 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:09:50
+2022-03-02 15:10:50.241 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:10:50
+2022-03-02 15:10:50.241 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:10:50
+2022-03-02 15:11:50.240 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:11:50
+2022-03-02 15:11:50.241 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:11:50
+2022-03-02 15:12:21.384 [http-nio-9999-exec-7] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9999-exec-7] Exception processing template "sendcmd/view": An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 55 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 57 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 76 common frames omitted
+2022-03-02 15:12:21.385 [http-nio-9999-exec-7] ERROR o.a.c.c.C.[.[.[/wgcloud].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/wgcloud] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:12:21.388 [http-nio-9999-exec-7] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/wgcloud/command/list] and exception [An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
+2022-03-02 15:12:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:12:50
+2022-03-02 15:12:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:12:50
+2022-03-02 15:13:16.908 [http-nio-9999-exec-1] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9999-exec-1] Exception processing template "sendcmd/view": An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 55 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "command.id" (template: "sendcmd/view" - line 48, col 63)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 57 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 76 common frames omitted
+2022-03-02 15:13:16.909 [http-nio-9999-exec-1] ERROR o.a.c.c.C.[.[.[/wgcloud].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/wgcloud] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:13:16.912 [http-nio-9999-exec-1] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/wgcloud/command/list] and exception [An error happened during template parsing (template: "class path resource [templates/sendcmd/view.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
+2022-03-02 15:13:50.241 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:13:50
+2022-03-02 15:13:50.241 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:13:50
+2022-03-02 15:14:50.240 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:14:50
+2022-03-02 15:14:50.241 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:14:50
+2022-03-02 15:14:56.305 [http-nio-9999-exec-7] ERROR com.wgcloud.controller.DashboardCotroller - 服务器图形报表错误：
+java.lang.NumberFormatException: For input string: "3495157606"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:583)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.wgcloud.controller.DashboardCotroller.toNetIoStateDto(DashboardCotroller.java:410)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:343)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:14:56.352 [http-nio-9999-exec-7] ERROR com.wgcloud.service.LogInfoService - 保存日志信息异常：
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+### The error may involve com.wgcloud.mapper.LogInfoMapper.save-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO LOG_INFO       ( ID,          HOST_NAME,         INFO_CONTENT,         STATE,         CREATE_TIME )        values ( ?,         ?,         ?,         ?,         ? )
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+; Data truncation: Data too long for column 'STATE' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy69.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy70.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy72.save(Unknown Source)
+	at com.wgcloud.service.LogInfoService.save(LogInfoService.java:57)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:350)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3974)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy115.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 75 common frames omitted
+2022-03-02 15:15:04.332 [http-nio-9999-exec-5] ERROR com.wgcloud.controller.DashboardCotroller - 服务器图形报表错误：
+java.lang.NumberFormatException: For input string: "3441771388"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:583)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.wgcloud.controller.DashboardCotroller.toNetIoStateDto(DashboardCotroller.java:410)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:343)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:15:04.351 [http-nio-9999-exec-5] ERROR com.wgcloud.service.LogInfoService - 保存日志信息异常：
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+### The error may involve com.wgcloud.mapper.LogInfoMapper.save-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO LOG_INFO       ( ID,          HOST_NAME,         INFO_CONTENT,         STATE,         CREATE_TIME )        values ( ?,         ?,         ?,         ?,         ? )
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+; Data truncation: Data too long for column 'STATE' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy69.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy70.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy72.save(Unknown Source)
+	at com.wgcloud.service.LogInfoService.save(LogInfoService.java:57)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:350)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3974)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy115.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 75 common frames omitted
+2022-03-02 15:15:05.648 [http-nio-9999-exec-1] ERROR com.wgcloud.controller.DashboardCotroller - 服务器图形报表错误：
+java.lang.NumberFormatException: For input string: "2811603089"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:583)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.wgcloud.controller.DashboardCotroller.toNetIoStateDto(DashboardCotroller.java:410)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:343)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:15:05.667 [http-nio-9999-exec-1] ERROR com.wgcloud.service.LogInfoService - 保存日志信息异常：
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+### The error may involve com.wgcloud.mapper.LogInfoMapper.save-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO LOG_INFO       ( ID,          HOST_NAME,         INFO_CONTENT,         STATE,         CREATE_TIME )        values ( ?,         ?,         ?,         ?,         ? )
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+; Data truncation: Data too long for column 'STATE' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy69.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy70.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy72.save(Unknown Source)
+	at com.wgcloud.service.LogInfoService.save(LogInfoService.java:57)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:350)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3974)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy115.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 75 common frames omitted
+2022-03-02 15:15:50.241 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:15:50
+2022-03-02 15:15:50.241 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:15:50
+2022-03-02 15:16:50.241 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:16:50
+2022-03-02 15:16:50.241 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:16:50
+2022-03-02 15:17:50.240 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:17:50
+2022-03-02 15:17:50.240 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:17:50
+2022-03-02 15:17:50.240 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:17:50
+2022-03-02 15:18:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:18:50
+2022-03-02 15:18:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:18:50
+2022-03-02 15:19:50.240 [taskScheduler-26] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:19:50
+2022-03-02 15:19:50.241 [taskScheduler-26] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:19:50
+2022-03-02 15:20:50.240 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:20:50
+2022-03-02 15:20:50.241 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:20:50
+2022-03-02 15:21:50.240 [taskScheduler-28] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:21:50
+2022-03-02 15:21:50.240 [taskScheduler-28] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:21:50
+2022-03-02 15:22:47.277 [http-nio-9999-exec-8] ERROR com.wgcloud.controller.DashboardCotroller - 服务器图形报表错误：
+java.lang.NumberFormatException: For input string: "3495157606"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:583)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.wgcloud.controller.DashboardCotroller.toNetIoStateDto(DashboardCotroller.java:410)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:343)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-02 15:22:47.297 [http-nio-9999-exec-8] ERROR com.wgcloud.service.LogInfoService - 保存日志信息异常：
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+### The error may involve com.wgcloud.mapper.LogInfoMapper.save-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO LOG_INFO       ( ID,          HOST_NAME,         INFO_CONTENT,         STATE,         CREATE_TIME )        values ( ?,         ?,         ?,         ?,         ? )
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+; Data truncation: Data too long for column 'STATE' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy69.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy70.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy72.save(Unknown Source)
+	at com.wgcloud.service.LogInfoService.save(LogInfoService.java:57)
+	at com.wgcloud.controller.DashboardCotroller.hostChart(DashboardCotroller.java:350)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.wgcloud.filter.AuthRestFilter.doFilter(AuthRestFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'STATE' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3974)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy115.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.GeneratedMethodAccessor163.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 75 common frames omitted
+2022-03-02 15:22:50.240 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:22:50
+2022-03-02 15:22:50.240 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:22:50
+2022-03-02 15:23:50.241 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:23:50
+2022-03-02 15:23:50.241 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:23:50
+2022-03-02 15:24:50.240 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:24:50
+2022-03-02 15:24:50.240 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:24:50
+2022-03-02 15:25:50.241 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:25:50
+2022-03-02 15:25:50.241 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:25:50
+2022-03-02 15:26:50.240 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:26:50
+2022-03-02 15:26:50.240 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:26:50
+2022-03-02 15:27:50.239 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:27:50
+2022-03-02 15:27:50.240 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:27:50
+2022-03-02 15:27:50.240 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:27:50
+2022-03-02 15:28:50.240 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:28:50
+2022-03-02 15:28:50.241 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:28:50
+2022-03-02 15:29:50.241 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:29:50
+2022-03-02 15:29:50.241 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:29:50
+2022-03-02 15:30:50.240 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:30:50
+2022-03-02 15:30:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:30:50
+2022-03-02 15:31:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:31:50
+2022-03-02 15:31:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:31:50
+2022-03-02 15:32:50.240 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:32:50
+2022-03-02 15:32:50.241 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:32:50
+2022-03-02 15:33:50.240 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:33:50
+2022-03-02 15:33:50.240 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:33:50
+2022-03-02 15:34:50.240 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:34:50
+2022-03-02 15:34:50.241 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:34:50
+2022-03-02 15:35:50.241 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:35:50
+2022-03-02 15:35:50.241 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:35:50
+2022-03-02 15:36:50.240 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:36:50
+2022-03-02 15:36:50.240 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:36:50
+2022-03-02 15:37:50.239 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:37:50
+2022-03-02 15:37:50.240 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:37:50
+2022-03-02 15:37:50.240 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:37:50
+2022-03-02 15:38:50.240 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:38:50
+2022-03-02 15:38:50.240 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:38:50
+2022-03-02 15:39:50.240 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:39:50
+2022-03-02 15:39:50.240 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:39:50
+2022-03-02 15:40:50.241 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:40:50
+2022-03-02 15:40:50.241 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:40:50
+2022-03-02 15:41:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:41:50
+2022-03-02 15:41:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:41:50
+2022-03-02 15:42:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:42:50
+2022-03-02 15:42:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:42:50
+2022-03-02 15:43:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:43:50
+2022-03-02 15:43:50.241 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:43:50
+2022-03-02 15:44:50.240 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:44:50
+2022-03-02 15:44:50.240 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:44:50
+2022-03-02 15:45:50.240 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:45:50
+2022-03-02 15:45:50.240 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:45:50
+2022-03-02 15:45:58.817 [Thread-20] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-02 15:45:58.818 [Thread-20] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-03-02 15:45:58.825 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-03-02 15:45:58.833 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-03-02 15:46:35.149 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Starting WgcloudServiceApplication on wufei-server with PID 31762 (/home/wufei/IdeaProjects/wgcloud/wgcloud-server/target/classes started by wufei in /home/wufei/IdeaProjects/wgcloud/wgcloud-server)
+2022-03-02 15:46:35.158 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - No active profile set, falling back to default profiles: default
+2022-03-02 15:46:35.390 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-02 15:46:35.391 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-02 15:46:36.500 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2022-03-02 15:46:36.525 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-02 15:46:36.525 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2022-03-02 15:46:36.529 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2022-03-02 15:46:36.567 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring embedded WebApplicationContext
+2022-03-02 15:46:36.567 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1176 ms
+2022-03-02 15:46:37.298 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-03-02 15:46:37.484 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-03-02 15:46:37.585 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-02 15:46:37.672 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-03-02 15:46:37.762 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-02 15:46:37.800 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/wgcloud'
+2022-03-02 15:46:37.803 [restartedMain] INFO  com.wgcloud.WgcloudServiceApplication - Started WgcloudServiceApplication in 3.464 seconds (JVM running for 4.294)
+2022-03-02 15:47:06.330 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/wgcloud] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-02 15:47:06.331 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-02 15:47:06.336 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2022-03-02 15:47:07.786 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:47:07
+2022-03-02 15:47:07.787 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:47:07
+2022-03-02 15:48:07.785 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:48:07
+2022-03-02 15:48:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:48:07
+2022-03-02 15:48:07.787 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:48:07
+2022-03-02 15:49:07.785 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:49:07
+2022-03-02 15:49:07.785 [taskScheduler-1] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:49:07
+2022-03-02 15:50:07.785 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:50:07
+2022-03-02 15:50:07.785 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:50:07
+2022-03-02 15:51:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:51:07
+2022-03-02 15:51:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:51:07
+2022-03-02 15:52:07.786 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:52:07
+2022-03-02 15:52:07.786 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:52:07
+2022-03-02 15:53:07.785 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:53:07
+2022-03-02 15:53:07.785 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:53:07
+2022-03-02 15:54:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:54:07
+2022-03-02 15:54:07.786 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:54:07
+2022-03-02 15:55:07.786 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:55:07
+2022-03-02 15:55:07.787 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:55:07
+2022-03-02 15:56:07.785 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:56:07
+2022-03-02 15:56:07.786 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:56:07
+2022-03-02 15:57:07.785 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:57:07
+2022-03-02 15:57:07.785 [taskScheduler-2] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:57:07
+2022-03-02 15:58:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 15:58:07
+2022-03-02 15:58:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:58:07
+2022-03-02 15:58:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:58:07
+2022-03-02 15:59:07.785 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 15:59:07
+2022-03-02 15:59:07.785 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 15:59:07
+2022-03-02 16:00:07.785 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:00:07
+2022-03-02 16:00:07.786 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:00:07
+2022-03-02 16:01:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:01:07
+2022-03-02 16:01:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:01:07
+2022-03-02 16:02:07.785 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:02:07
+2022-03-02 16:02:07.785 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:02:07
+2022-03-02 16:03:07.785 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:03:07
+2022-03-02 16:03:07.786 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:03:07
+2022-03-02 16:04:07.788 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:04:07
+2022-03-02 16:04:07.788 [taskScheduler-6] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:04:07
+2022-03-02 16:05:07.785 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:05:07
+2022-03-02 16:05:07.785 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:05:07
+2022-03-02 16:06:07.786 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:06:07
+2022-03-02 16:06:07.786 [taskScheduler-11] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:06:07
+2022-03-02 16:07:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:07:07
+2022-03-02 16:07:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:07:07
+2022-03-02 16:08:07.785 [taskScheduler-14] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:08:07
+2022-03-02 16:08:07.785 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:08:07
+2022-03-02 16:08:07.785 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:08:07
+2022-03-02 16:09:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:09:07
+2022-03-02 16:09:07.786 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:09:07
+2022-03-02 16:10:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:10:07
+2022-03-02 16:10:07.786 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:10:07
+2022-03-02 16:11:07.786 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:11:07
+2022-03-02 16:11:07.786 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:11:07
+2022-03-02 16:12:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:12:07
+2022-03-02 16:12:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:12:07
+2022-03-02 16:13:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:13:07
+2022-03-02 16:13:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:13:07
+2022-03-02 16:14:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:14:07
+2022-03-02 16:14:07.786 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:14:07
+2022-03-02 16:15:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:15:07
+2022-03-02 16:15:07.786 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:15:07
+2022-03-02 16:16:07.786 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:16:07
+2022-03-02 16:16:07.786 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:16:07
+2022-03-02 16:17:07.785 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:17:07
+2022-03-02 16:17:07.785 [taskScheduler-30] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:17:07
+2022-03-02 16:18:07.784 [taskScheduler-32] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:18:07
+2022-03-02 16:18:07.785 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:18:07
+2022-03-02 16:18:07.785 [taskScheduler-18] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:18:07
+2022-03-02 16:19:07.785 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:19:07
+2022-03-02 16:19:07.785 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:19:07
+2022-03-02 16:20:07.785 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:20:07
+2022-03-02 16:20:07.785 [taskScheduler-3] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:20:07
+2022-03-02 16:21:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:21:07
+2022-03-02 16:21:07.786 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:21:07
+2022-03-02 16:22:07.786 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:22:07
+2022-03-02 16:22:07.786 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:22:07
+2022-03-02 16:23:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:23:07
+2022-03-02 16:23:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:23:07
+2022-03-02 16:24:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:24:07
+2022-03-02 16:24:07.786 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:24:07
+2022-03-02 16:25:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:25:07
+2022-03-02 16:25:07.786 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:25:07
+2022-03-02 16:26:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:26:07
+2022-03-02 16:26:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:26:07
+2022-03-02 16:27:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:27:07
+2022-03-02 16:27:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:27:07
+2022-03-02 16:28:07.785 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:28:07
+2022-03-02 16:28:07.785 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:28:07
+2022-03-02 16:28:07.785 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:28:07
+2022-03-02 16:29:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:29:07
+2022-03-02 16:29:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:29:07
+2022-03-02 16:30:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:30:07
+2022-03-02 16:30:07.786 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:30:07
+2022-03-02 16:31:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:31:07
+2022-03-02 16:31:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:31:07
+2022-03-02 16:32:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:32:07
+2022-03-02 16:32:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:32:07
+2022-03-02 16:33:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:33:07
+2022-03-02 16:33:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:33:07
+2022-03-02 16:34:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:34:07
+2022-03-02 16:34:07.785 [taskScheduler-24] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:34:07
+2022-03-02 16:35:07.785 [taskScheduler-47] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:35:07
+2022-03-02 16:35:07.785 [taskScheduler-47] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:35:07
+2022-03-02 16:36:07.785 [taskScheduler-47] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:36:07
+2022-03-02 16:36:07.785 [taskScheduler-47] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:36:07
+2022-03-02 16:37:07.785 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:37:07
+2022-03-02 16:37:07.785 [taskScheduler-15] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:37:07
+2022-03-02 16:38:07.785 [taskScheduler-50] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:38:07
+2022-03-02 16:38:07.785 [taskScheduler-50] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:38:07
+2022-03-02 16:38:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:38:07
+2022-03-02 16:39:07.785 [taskScheduler-50] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:39:07
+2022-03-02 16:39:07.786 [taskScheduler-50] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:39:07
+2022-03-02 16:40:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:40:07
+2022-03-02 16:40:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:40:07
+2022-03-02 16:41:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:41:07
+2022-03-02 16:41:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:41:07
+2022-03-02 16:42:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:42:07
+2022-03-02 16:42:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:42:07
+2022-03-02 16:43:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:43:07
+2022-03-02 16:43:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:43:07
+2022-03-02 16:44:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:44:07
+2022-03-02 16:44:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:44:07
+2022-03-02 16:45:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:45:07
+2022-03-02 16:45:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:45:07
+2022-03-02 16:46:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:46:07
+2022-03-02 16:46:07.786 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:46:07
+2022-03-02 16:47:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:47:07
+2022-03-02 16:47:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:47:07
+2022-03-02 16:48:07.784 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:48:07
+2022-03-02 16:48:07.785 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:48:07
+2022-03-02 16:48:07.784 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:48:07
+2022-03-02 16:49:07.786 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:49:07
+2022-03-02 16:49:07.786 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:49:07
+2022-03-02 16:50:07.785 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:50:07
+2022-03-02 16:50:07.785 [taskScheduler-39] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:50:07
+2022-03-02 16:51:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:51:07
+2022-03-02 16:51:07.786 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:51:07
+2022-03-02 16:52:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:52:07
+2022-03-02 16:52:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:52:07
+2022-03-02 16:53:07.785 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:53:07
+2022-03-02 16:53:07.786 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:53:07
+2022-03-02 16:54:07.786 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:54:07
+2022-03-02 16:54:07.786 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:54:07
+2022-03-02 16:55:07.785 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:55:07
+2022-03-02 16:55:07.786 [taskScheduler-23] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:55:07
+2022-03-02 16:56:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:56:07
+2022-03-02 16:56:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:56:07
+2022-03-02 16:57:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:57:07
+2022-03-02 16:57:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:57:07
+2022-03-02 16:58:07.784 [taskScheduler-45] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 16:58:07
+2022-03-02 16:58:07.785 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:58:07
+2022-03-02 16:58:07.785 [taskScheduler-46] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:58:07
+2022-03-02 16:59:07.785 [taskScheduler-48] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 16:59:07
+2022-03-02 16:59:07.786 [taskScheduler-48] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 16:59:07
+2022-03-02 17:00:07.785 [taskScheduler-48] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:00:07
+2022-03-02 17:00:07.785 [taskScheduler-48] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:00:07
+2022-03-02 17:01:07.786 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:01:07
+2022-03-02 17:01:07.786 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:01:07
+2022-03-02 17:02:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:02:07
+2022-03-02 17:02:07.786 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:02:07
+2022-03-02 17:03:07.788 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:03:07
+2022-03-02 17:03:07.788 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:03:07
+2022-03-02 17:04:07.786 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:04:07
+2022-03-02 17:04:07.786 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:04:07
+2022-03-02 17:05:07.785 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:05:07
+2022-03-02 17:05:07.785 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:05:07
+2022-03-02 17:06:07.786 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:06:07
+2022-03-02 17:06:07.786 [taskScheduler-8] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:06:07
+2022-03-02 17:07:07.785 [taskScheduler-29] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:07:07
+2022-03-02 17:07:07.785 [taskScheduler-29] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:07:07
+2022-03-02 17:08:07.785 [taskScheduler-32] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:08:07
+2022-03-02 17:08:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:08:07
+2022-03-02 17:08:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:08:07
+2022-03-02 17:09:07.785 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:09:07
+2022-03-02 17:09:07.786 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:09:07
+2022-03-02 17:10:07.785 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:10:07
+2022-03-02 17:10:07.785 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:10:07
+2022-03-02 17:11:07.786 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:11:07
+2022-03-02 17:11:07.786 [taskScheduler-33] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:11:07
+2022-03-02 17:12:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:12:07
+2022-03-02 17:12:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:12:07
+2022-03-02 17:13:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:13:07
+2022-03-02 17:13:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:13:07
+2022-03-02 17:14:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:14:07
+2022-03-02 17:14:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:14:07
+2022-03-02 17:15:07.785 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:15:07
+2022-03-02 17:15:07.785 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:15:07
+2022-03-02 17:16:07.786 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:16:07
+2022-03-02 17:16:07.786 [taskScheduler-38] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:16:07
+2022-03-02 17:17:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:17:07
+2022-03-02 17:17:07.785 [taskScheduler-37] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:17:07
+2022-03-02 17:18:07.785 [taskScheduler-21] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:18:07
+2022-03-02 17:18:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:18:07
+2022-03-02 17:18:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:18:07
+2022-03-02 17:19:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:19:07
+2022-03-02 17:19:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:19:07
+2022-03-02 17:20:07.785 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:20:07
+2022-03-02 17:20:07.786 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:20:07
+2022-03-02 17:21:07.785 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:21:07
+2022-03-02 17:21:07.785 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:21:07
+2022-03-02 17:22:07.785 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:22:07
+2022-03-02 17:22:07.785 [taskScheduler-44] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:22:07
+2022-03-02 17:23:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:23:07
+2022-03-02 17:23:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:23:07
+2022-03-02 17:24:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:24:07
+2022-03-02 17:24:07.785 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:24:07
+2022-03-02 17:25:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:25:07
+2022-03-02 17:25:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:25:07
+2022-03-02 17:26:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:26:07
+2022-03-02 17:26:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:26:07
+2022-03-02 17:27:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:27:07
+2022-03-02 17:27:07.785 [taskScheduler-25] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:27:07
+2022-03-02 17:28:07.785 [taskScheduler-16] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:28:07
+2022-03-02 17:28:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:28:07
+2022-03-02 17:28:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:28:07
+2022-03-02 17:29:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:29:07
+2022-03-02 17:29:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:29:07
+2022-03-02 17:30:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:30:07
+2022-03-02 17:30:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:30:07
+2022-03-02 17:31:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:31:07
+2022-03-02 17:31:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:31:07
+2022-03-02 17:32:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:32:07
+2022-03-02 17:32:07.785 [taskScheduler-4] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:32:07
+2022-03-02 17:33:07.786 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:33:07
+2022-03-02 17:33:07.786 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:33:07
+2022-03-02 17:34:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:34:07
+2022-03-02 17:34:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:34:07
+2022-03-02 17:35:07.789 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:35:07
+2022-03-02 17:35:07.789 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:35:07
+2022-03-02 17:36:07.785 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:36:07
+2022-03-02 17:36:07.785 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:36:07
+2022-03-02 17:37:07.785 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:37:07
+2022-03-02 17:37:07.785 [taskScheduler-19] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:37:07
+2022-03-02 17:38:07.784 [taskScheduler-20] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:38:07
+2022-03-02 17:38:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:38:07
+2022-03-02 17:38:07.785 [taskScheduler-5] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:38:07
+2022-03-02 17:39:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:39:07
+2022-03-02 17:39:07.786 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:39:07
+2022-03-02 17:40:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:40:07
+2022-03-02 17:40:07.785 [taskScheduler-35] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:40:07
+2022-03-02 17:41:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:41:07
+2022-03-02 17:41:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:41:07
+2022-03-02 17:42:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:42:07
+2022-03-02 17:42:07.785 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:42:07
+2022-03-02 17:43:07.786 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:43:07
+2022-03-02 17:43:07.786 [taskScheduler-13] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:43:07
+2022-03-02 17:44:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:44:07
+2022-03-02 17:44:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:44:07
+2022-03-02 17:45:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:45:07
+2022-03-02 17:45:07.786 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:45:07
+2022-03-02 17:46:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:46:07
+2022-03-02 17:46:07.785 [taskScheduler-40] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:46:07
+2022-03-02 17:47:07.785 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:47:07
+2022-03-02 17:47:07.785 [taskScheduler-22] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:47:07
+2022-03-02 17:48:07.784 [taskScheduler-12] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:48:07
+2022-03-02 17:48:07.785 [taskScheduler-45] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:48:07
+2022-03-02 17:48:07.785 [taskScheduler-45] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:48:07
+2022-03-02 17:48:29.454 [taskScheduler-12] INFO  org.apache.http.impl.execchain.RetryExec - I/O exception (java.net.SocketException) caught when processing request to {}->http://www.wufei6.com:80: Connection reset
+2022-03-02 17:48:29.454 [taskScheduler-12] INFO  org.apache.http.impl.execchain.RetryExec - Retrying request to {}->http://www.wufei6.com:80
+2022-03-02 17:49:07.785 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:49:07
+2022-03-02 17:49:07.786 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:49:07
+2022-03-02 17:50:07.785 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:50:07
+2022-03-02 17:50:07.785 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:50:07
+2022-03-02 17:51:07.785 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:51:07
+2022-03-02 17:51:07.785 [taskScheduler-49] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:51:07
+2022-03-02 17:52:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:52:07
+2022-03-02 17:52:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:52:07
+2022-03-02 17:53:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:53:07
+2022-03-02 17:53:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:53:07
+2022-03-02 17:54:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:54:07
+2022-03-02 17:54:07.785 [taskScheduler-27] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:54:07
+2022-03-02 17:55:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:55:07
+2022-03-02 17:55:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:55:07
+2022-03-02 17:56:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:56:07
+2022-03-02 17:56:07.785 [taskScheduler-7] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:56:07
+2022-03-02 17:57:07.785 [taskScheduler-29] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:57:07
+2022-03-02 17:57:07.785 [taskScheduler-29] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:57:07
+2022-03-02 17:58:07.785 [taskScheduler-28] INFO  com.wgcloud.task.ScheduledTask - heathMonitorTask------------2022-03-02 17:58:07
+2022-03-02 17:58:07.785 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:58:07
+2022-03-02 17:58:07.785 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:58:07
+2022-03-02 17:59:07.785 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 17:59:07
+2022-03-02 17:59:07.786 [taskScheduler-9] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 17:59:07
+2022-03-02 18:00:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:00:07
+2022-03-02 18:00:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:00:07
+2022-03-02 18:01:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:01:07
+2022-03-02 18:01:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:01:07
+2022-03-02 18:02:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:02:07
+2022-03-02 18:02:07.785 [taskScheduler-17] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:02:07
+2022-03-02 18:03:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:03:07
+2022-03-02 18:03:07.785 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:03:07
+2022-03-02 18:04:07.788 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:04:07
+2022-03-02 18:04:07.788 [taskScheduler-34] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:04:07
+2022-03-02 18:05:07.785 [taskScheduler-36] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务开始----------2022-03-02 18:05:07
+2022-03-02 18:05:07.785 [taskScheduler-36] INFO  com.wgcloud.task.ScheduledTask - 批量提交监控数据任务结束----------2022-03-02 18:05:07
+2022-03-02 18:05:41.642 [Thread-12] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-02 18:05:41.643 [Thread-12] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-03-02 18:05:41.649 [Thread-12] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-03-02 18:05:41.669 [Thread-12] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

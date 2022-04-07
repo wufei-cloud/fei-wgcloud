@@ -40,12 +40,12 @@
                     <div class="col-md-10">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">钉钉告警(发送内存，CPU，服务接口告警，若不需要，可以删除或停用)</h3>
+                                <h3 class="card-title">上传文件或发送远程shell命令(执行命令需要先确认好命令的准确性)</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form" id="form1" method="post" th:action="@{'/dingset/save'}">
-                               <input type="hidden" name="id" th:value="${dingSet.id}"/>
+                            <form role="form" id="form1" method="post" th:action="@{'/command/save'}">
+                               <input type="hidden" name="id" th:value="${command.id}"/>
                                 <div class="card-body">
                                     <!--<div class="form-group">
                                         <label for="exampleInputEmail1"><font color="red">*</font>是否启用告警邮件</label>
@@ -55,14 +55,14 @@
                                         </select>
                                     </div>-->
                                     <div class="form-group">
-                                        <label for="fromDingName"><font color="red">*</font>钉钉机器人接口</label>
-                                        <input type="text"  th:value="${dingSet.fromDingName}" autocomplete="off" class="validate[required,maxSize[40],custom[email]] form-control" name="fromDingName" id="fromDingName" placeholder="123456@qq.com">
+                                        <label for="fromDingName"><font color="red">*</font>输入远程命令</label>
+                                        <input type="text"  th:value="${command.fromDingName}" autocomplete="off" class="validate[required,maxSize[40],custom[email]] form-control" name="fromDingName" id="fromDingName" placeholder="hostname">
                                     </div>
 
 
                                     <div class="form-group">
                                         <label for="fromDingName"><font color="red">*</font>输入需要@人的手机号，使用;隔开</label>
-                                        <input type="text" th:value="${dingSet.toPhone}"  autocomplete="off" class="validate[required,maxSize[200]] form-control" name="toPhone" id="toPhone" placeholder="18888888888;18088888888">
+                                        <input type="text" th:value="${command.toPhone}"  autocomplete="off" class="validate[required,maxSize[200]] form-control" name="toPhone" id="toPhone" placeholder="18888888888;18088888888">
                                     </div>
 
                                 </div>

@@ -143,9 +143,9 @@ public class WarnDingTalk {
     public static boolean sendHostDown(SystemInfo systemInfo, boolean isDown) {
         String key = systemInfo.getId();
         if (isDown) {
-            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
-                return false;
-            }
+//            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
+//                return false;
+//            }
             try {
                 String title = ("主机下线告警 " + systemInfo.getHostname());
                 String text = ("**<font color=#FF0000 size=6>主机下线告警 Q1 </font>** \n\n " + getPhone()
@@ -186,9 +186,9 @@ public class WarnDingTalk {
     public static boolean sendAppDown(AppInfo appInfo, boolean isDown) {
         String key = appInfo.getId();
         if (isDown) {
-            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
-                return false;
-            }
+//            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
+//                return false;
+//            }
             try {
                 String title = ("进程下线告警 " + appInfo.getHostname());
                 String text = ("**<font color=#FF0000 size=6>进程下线告警 Q1 </font>** " + getPhone()
@@ -222,9 +222,9 @@ public class WarnDingTalk {
     public static boolean sendHeathInfo(HeathMonitor heathMonitor, boolean isDown) {
         String key = heathMonitor.getId();
         if (isDown) {
-            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
-                return false;
-            }
+//            if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(key))) {
+//                return false;
+//            }
             try {
                 String title = "服务接口检测告警：" + heathMonitor.getAppName();
                 String text = "**<font color=#750000 size=4>服务接口检测告警 Q2 </font>** \n\n " + getPhone()

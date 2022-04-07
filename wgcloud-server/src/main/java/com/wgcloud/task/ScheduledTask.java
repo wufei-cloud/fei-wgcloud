@@ -136,13 +136,11 @@ public class ScheduledTask {
                         logInfo.setState(StaticKeys.LOG_ERROR);
                         logInfoList.add(logInfo);
                         updateList.add(systemInfo);
-                        System.out.println("准备发送钉钉");
                         Runnable runnable = () -> {
 //                            WarnMailUtil.sendHostDown(systemInfo, true);
                             WarnDingTalk.sendHostDown(systemInfo,true);
                         };
                         executor.execute(runnable);
-                        System.out.println("钉钉发送完毕");
                     } else {
                         if (!StringUtils.isEmpty(WarnPools.MEM_WARN_MAP.get(systemInfo.getId()))) {
                             Runnable runnable = () -> {

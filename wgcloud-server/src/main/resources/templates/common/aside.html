@@ -241,6 +241,35 @@
                 </ul>
                 </li>
 
+                <th:block th:if="${#strings.startsWith(session.menuActive,'3')}">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="javascript:void(0);" class="nav-link active">
+                </th:block>
+                <th:block th:unless="${#strings.startsWith(session.menuActive,'3')}">
+                    <li class="nav-item has-treeview">
+                        <a href="javascript:void(0);" class="nav-link">
+                </th:block>
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                    命令发送
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <th:block th:if="${session.menuActive eq '31'}">
+                            <a th:href="@{'/command/list'}" class="nav-link active">
+                        </th:block>
+                        <th:block th:unless="${session.menuActive eq '31'}">
+                            <a th:href="@{'/command/list'}" class="nav-link">
+                        </th:block>
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>发送列表</p>
+                        </a>
+                    </li>
+
+                </ul>
+                </li>
 
                 <li class="nav-item">
                     <a target="_blank" th:href="@{'/dash/main?dashView=1'}" title="请确认配置文件已开启公众看板" class="nav-link">
